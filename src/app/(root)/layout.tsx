@@ -29,7 +29,9 @@ export default function RootGroupLayout({
     >
       <div
         ref={mainContainerRef}
-        className="h-screen flex flex-col  p-1 bg-primary rounded-none lg:rounded-tr-none lg:rounded-[100px] "
+        className={`h-screen flex flex-col  p-1 bg-primary rounded-none ${
+          navOpen && "lg:rounded-bl-none"
+        } lg:rounded-tr-none lg:rounded-br-none  lg:rounded-[100px] transition-all duration-700 `}
       >
         <div className="h-full relative rounded-3xl lg:rounded-tr-none lg:rounded-[100px]  bg-custom-red">
           {children}

@@ -7,7 +7,7 @@ export default function Home() {
         </p>
         <p>DEVELOPER</p>
       </div>
-      <div className="w-full flex flex-col items-end text-4xl px-5 text-primary technor-text font-extalight justify-end">
+      <div className="w-full flex flex-col items-end text-2xl px-5 text-primary technor-text font-light justify-end">
         <p>
           <p>Hi! I am A. Akhmadjonov.</p>
           <p>I craft immersive digital</p>
