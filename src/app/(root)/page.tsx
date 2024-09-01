@@ -17,6 +17,7 @@ export default function Home() {
           <span>solutions that inspire.</span>
         </p>
       </div>
+
       <div className="flex self-end w-full h-full items-end uppercase justify-center">
         <div className="absolute bg-primary text-4xl lg:text-8xl bottom-0 right-0 px-8 py-4 gap-3 lg:gap-6 flex items-center rounded-tl-[50px]">
           <div className="w-8 h-1/3 absolute left-0 -translate-x-full bg-primary bottom-0">
