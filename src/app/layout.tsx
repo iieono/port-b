@@ -11,6 +11,7 @@ import {
   epilogue,
   array,
   alpino,
+  technor,
   kola,
 } from "../../fonts";
 
@@ -35,6 +36,8 @@ export default function RootLayout({
       ${epilogue.variable}
       ${array.variable}
       ${kola.variable}
+      ${technor.variable}
+      ${alpino.variable}
     `}
     >
       <body>{children}</body>

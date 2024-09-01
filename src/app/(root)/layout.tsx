@@ -12,20 +12,11 @@ export default function RootGroupLayout({
   useGSAP(() => {
     if (window.innerWidth > 1024) {
       gsap.from(hamRef.current, {
-        duration: 1.5,
-        delay: 2,
+        duration: 2,
         y: 100,
         ease: "power2.out",
       });
     }
-    gsap.from(mainContainerRef.current, {
-      backgroundColor: "#dc2626",
-      opacity: 0,
-      y: 50,
-      duration: 1.2,
-      delay: 2,
-      ease: "power2.out",
-    });
   });
 
   const mainContainerRef = useRef(null);
@@ -38,9 +29,9 @@ export default function RootGroupLayout({
     >
       <div
         ref={mainContainerRef}
-        className="h-screen flex flex-col  p-1 bg-white rounded-b-none origin-bottom rounded-none lg:rounded-[100px] "
+        className="h-screen flex flex-col  p-1 bg-primary rounded-none lg:rounded-tr-none lg:rounded-[100px] "
       >
-        <div className="h-full relative rounded-3xl lg:rounded-[100px]  bg-custom-red">
+        <div className="h-full relative rounded-3xl lg:rounded-tr-none lg:rounded-[100px]  bg-custom-red">
           {children}
           <div
             ref={hamRef}
@@ -50,13 +41,13 @@ export default function RootGroupLayout({
             <div className="flex items-center flex-col gap-1 justify-center z-20 ">
               <div
                 className={`${
-                  navOpen ? "w-5 h-1 bg-custom-red" : "w-8 h-2 bg-white"
-                }  rounded-full transition-all duration-700 lg:bg-white`}
+                  navOpen ? "w-5 h-1 bg-custom-red" : "w-8 h-2 bg-primary"
+                }  rounded-full transition-all duration-700 lg:bg-primary`}
               ></div>
               <div
                 className={`${
-                  navOpen ? "w-8 h-2 bg-custom-red" : "w-5 h-1 bg-white"
-                }  rounded-full transition-all duration-700  lg:bg-white`}
+                  navOpen ? "w-8 h-2 bg-custom-red" : "w-5 h-1 bg-primary"
+                }  rounded-full transition-all duration-700  lg:bg-primary`}
               ></div>
             </div>
             {/* <CiLocationArrow1 className="text-white text-5xl pt-1 pr-1" /> */}
@@ -65,7 +56,7 @@ export default function RootGroupLayout({
         <div
           className={`w-full ${
             navOpen ? "h-full lg:h-28 rounded-t-none" : "h-0 rounded-t-full"
-          } overflow-hidden flex justify-between   transition-all bg-white lg:rounded-t-none lg:bg-transparent duration-700 gap-5 left-0 bottom-0 absolute lg:relative `}
+          } overflow-hidden flex justify-between   transition-all bg-primary lg:rounded-t-none lg:bg-transparent duration-700 gap-5 left-0 bottom-0 absolute lg:relative `}
         >
           <div className="h-full w-full flex flex-col lg:flex-row  items-center justify-center gap-10 lg:gap-0 lg:justify-between px-20 text-4xl lg:text-5xl uppercase raleway array-text font-light">
             <div>Home</div>

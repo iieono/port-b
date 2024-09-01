@@ -14,6 +14,18 @@ export const styro = localFont({
   ],
   variable: '--font-styro'
 })
+export const technor = localFont({
+  src: [
+    { path: './public/fonts/Technor_Complete/Fonts/OTF/Technor-Black.otf', weight: '900', style: 'normal' },
+    { path: './public/fonts/Technor_Complete/Fonts/OTF/Technor-Bold.otf', weight: '700', style: 'normal' },
+    { path: './public/fonts/Technor_Complete/Fonts/OTF/Technor-Extralight.otf', weight: '200', style: 'normal' },
+    { path: './public/fonts/Technor_Complete/Fonts/OTF/Technor-Light.otf', weight: '300', style: 'normal' },
+    { path: './public/fonts/Technor_Complete/Fonts/OTF/Technor-Medium.otf', weight: '500', style: 'normal' },
+    { path: './public/fonts/Technor_Complete/Fonts/OTF/Technor-Regular.otf', weight: '400', style: 'normal' },
+    { path: './public/fonts/Technor_Complete/Fonts/OTF/Technor-Semibold.otf', weight: '600', style: 'normal' },
+  ],
+  variable: '--font-technor'
+})
 export const alpino = localFont({
   src: [
     { path: './public/fonts/Alpino_Complete/Fonts/OTF/Alpino-Black.otf', weight: '900', style: 'normal' },
@@ -23,7 +35,7 @@ export const alpino = localFont({
     { path: './public/fonts/Alpino_Complete/Fonts/OTF/Alpino-Regular.otf', weight: '400', style: 'normal' },
     { path: './public/fonts/Alpino_Complete/Fonts/OTF/Alpino-Thin.otf', weight: '100', style: 'normal' },
   ],
-  variable: '--font-styro'
+  variable: '--font-alpino'
 })
 
 // Sharpie Complete
