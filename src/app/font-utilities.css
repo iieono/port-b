@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.raleway {
+    font-family: "Raleway", sans-serif;
+
+}
+
+.styro-text {
+    font-family: var(--font-styro);
+}
+
+.sharpie-text {
+    font-family: var(--font-sharpie);
+}
+
+.pen-text {
+    font-family: var(--font-pencerio);
+}
+
+.kalam-text {
+    font-family: var(--font-kalam);
+}
+
+.epilogue-text {
+    font-family: var(--font-epilogue);
+}
+.kola-text {
+    font-family: var(--font-kola);
+}
+.array-text {
+    font-family: var(--font-array);
+}
+.alpino-text {
+    font-family: var(--font-alpino);
+}
