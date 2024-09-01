@@ -9,13 +9,19 @@ export default function Home() {
         <p>DEVELOPER</p>
       </div>
       <div className="w-full lg:h-full flex flex-col items-start lg:items-start tracking-widest  text-lg lg:text-2xl xl:text-4xl px-5 lg:px-10 text-primary technor-text font-light justify-start">
-        <p className="leading-snug rounded-full lg:bg-primary lg:text-black lg:px-6 lg:py-4">
+        <p className="leading-snug rounded-3xl relative">
           {/* <span>I am A. Akhmadjonov. </span> */}
           {/* <br /> */}
           <span>Crafting immersive digital </span>
           <br className="md:hidden" />
           <span>solutions that inspire.</span>
         </p>
+      </div>
+      <div className="flex flex-col gap-3 text-4xl lg:text-[4rem] text-custom-yellow leading-none sawa absolute bottom-0 left-0 lg:left-auto lg:bottom-40 px-7 p-5 lg:right-0">
+        <p className="rotate-90">い</p>
+        <p className="rotate-90">え</p>
+        <p className="-rotate-90">よ</p>
+        <p className="-rotate-90">い</p>
       </div>
 
       <div className="flex self-end w-full items-end uppercase justify-center">
