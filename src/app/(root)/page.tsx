@@ -8,8 +8,8 @@ export default function Home() {
         </p>
         <p>DEVELOPER</p>
       </div>
-      <div className="w-full lg:h-full flex flex-col items-start lg:items-start tracking-widest  text-lg lg:text-2xl xl:text-3xl px-5 lg:px-10 text-primary technor-text font-light justify-start">
-        <p className="leading-snug">
+      <div className="w-full lg:h-full flex flex-col items-start lg:items-start tracking-widest  text-lg lg:text-2xl xl:text-4xl px-5 lg:px-10 text-primary technor-text font-light justify-start">
+        <p className="leading-snug rounded-full lg:bg-primary lg:text-black lg:px-6 lg:py-4">
           {/* <span>I am A. Akhmadjonov. </span> */}
           {/* <br /> */}
           <span>Crafting immersive digital </span>
