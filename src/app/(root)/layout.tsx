@@ -61,9 +61,7 @@ export default function RootGroupLayout({
           } overflow-hidden flex justify-between  transition-all bg-primary lg:rounded-t-none lg:bg-transparent duration-700 gap-5 left-0 bottom-0 absolute lg:relative `}
         >
           <div className="h-full w-full flex flex-col lg:flex-row  items-center justify-center gap-10 lg:gap-0 lg:justify-between px-20 text-4xl lg:text-5xl uppercase raleway array-text font-light">
-            <div className="bg-red-600 text-primary px-4 py-2 rounded-full">
-              Home
-            </div>
+            <div className="bg-custom-gray  px-4 py-2 rounded-full">Home</div>
             <div>About</div>
             <div>Gallery</div>
             <div>Projects</div>
