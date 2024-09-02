@@ -37,7 +37,7 @@ export default function RootGroupLayout({
           {children}
           <div
             ref={hamRef}
-            className="absolute flex items-center  justify-center w-20 h-20 lg:bg-custom-gray top-0 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-full lg:border-4 border-white"
+            className="absolute flex items-center  justify-center w-20 h-20 lg:bg-custom-gray top-0 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-full lg:border-4 border-primary"
             onClick={() => setNavOpen((prev) => !prev)}
           >
             <div className="flex items-center flex-col gap-1 justify-center z-20 ">
