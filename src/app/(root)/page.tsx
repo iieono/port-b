@@ -6,10 +6,10 @@ export default function Home() {
         iieo
       </div>
       <div className="leading-none sharpie-text text-[4rem] w-full px-5 lg:px-10 md:text-[8rem] lg:text-[10rem] xl:text-[14rem] 2xl:text-[17rem] flex items-start justify-start lg:justify-center flex-col ">
-        <p className=" ">
+        <p className="">
           DESIGNER <span className="text-primary ">&</span>
         </p>
-        <p>DEVELOPER</p>
+        <p className="">DEVELOPER</p>
       </div>
       <div className="w-full lg:h-full flex flex-col items-start lg:items-start tracking-widest  text-lg lg:text-2xl xl:text-4xl px-5 lg:px-10 text-custom-whiteish  jura font-extralight justify-start">
         <p className="leading-snug rounded-3xl italic relative">
@@ -32,16 +32,16 @@ export default function Home() {
           <div className="lg:hidden w-8 h-1/2 absolute left-0 -translate-y-full bg-primary top-0">
             <div className="w-full h-full bg-custom-red rounded-bl-[30px]"></div>
           </div>
-          <p className="text-center technor-text lg:pb-1 font-extralight">
+          <p className="text-center text-custom-deepgray technor-text lg:pb-1 font-extralight">
             EXPLORE
           </p>
           <div className="flex h-full  gap-1 lg:gap-2 items-center">
             <div className="flex flex-col items-center gap-1 lg:gap-2">
-              <div className="h-2 lg:h-3 w-2 lg:w-3 bg-black rounded-full"></div>
-              <div className="h-2 lg:h-3 w-2 lg:w-3 bg-black rounded-full"></div>
+              <div className="h-2 lg:h-3 w-2 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="h-2 lg:h-3 w-2 lg:w-3 bg-custom-deepgray rounded-full"></div>
             </div>
             <div className="flex items-center flex-col ">
-              <div className="h-2 lg:h-3 w-2 lg:w-3 bg-black rounded-full"></div>
+              <div className="h-2 lg:h-3 w-2 lg:w-3 bg-custom-deepgray rounded-full"></div>
             </div>
           </div>
         </div>
