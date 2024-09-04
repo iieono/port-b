@@ -6,12 +6,13 @@ export default function Home() {
       <div className=" text-2xl  text-primary absolute lg:relative lg:text-6xl lg:pl-5 top-6 left-7  pen-text">
         '//e0
       </div>
+
       <div className="leading-none sharpie-text text-[4rem] w-full h-full px-5 lg:px-10 md:text-[8rem] lg:text-[10rem] xl:text-[14rem] 2xl:text-[17rem] flex items-start justify-start lg:justify-start flex-col ">
         <p className="">
           DESIGNER <span className="text-primary ">&</span>
         </p>
         <p className="">DEVELOPER</p>
-        <p className="text-lg lg:text-xl xl:text-3xl jura font-extralight text-custom-whiteish leading-snug rounded-3xl italic relative">
+        <p className="text-lg lg:text-xl   xl:text-3xl jura font-extralight text-custom-whiteish leading-snug rounded-3xl italic relative">
           <span>Crafting immersive digital </span>
           <br className="md:hidden" />
           <span>solutions that inspire.</span>
