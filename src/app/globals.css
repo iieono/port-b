@@ -23,5 +23,5 @@
   @apply lg:translate-x-16 lg:-translate-y-16
 }
 .main-container:has(.nav-item:hover) .nav-open-2{
-    @apply lg:translate-y-0 lg:translate-x-0
+    @apply lg:translate-y-0 lg:translate-x-0 -rotate-45
 }

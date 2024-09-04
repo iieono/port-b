@@ -35,7 +35,7 @@ export default function Home() {
           <p className="text-center text-custom-deepgray technor-text lg:pb-1 font-extralight">
             EXPLORE
           </p>
-          <div className="flex h-full  gap-1 lg:gap-2 items-center">
+          <div className="flex h-full  gap-1 lg:gap-2 items-center ">
             <div className="flex flex-col items-center gap-1 lg:gap-2">
               <div className="h-2 lg:h-3 w-2 lg:w-3 bg-custom-deepgray rounded-full"></div>
               <div className="h-2 lg:h-3 w-2 lg:w-3 bg-custom-deepgray rounded-full"></div>
