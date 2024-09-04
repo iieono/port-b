@@ -2,27 +2,36 @@ import Link from "next/link";
 import { MdPlayArrow } from "react-icons/md";
 export default function Home() {
   return (
-    <div className=" h-full w-full flex items-center lg:items-start justify-start gap-5 lg:justify-between  flex-col p-2 py-5  lg:p-0 pt-24 lg:pt-20 lg:px-20">
-      <div className="lg:hidden text-3xl  text-primary absolute top-5 left-7  pen-text">
-        iieo
+    <div className=" h-full w-full flex items-center lg:items-start justify-start gap-5 lg:justify-between  flex-col p-2 py-5  lg:p-0 pt-20 lg:pt-10 lg:px-5">
+      <div className=" text-2xl  text-primary absolute lg:relative lg:text-6xl lg:pl-5 top-6 left-7  pen-text">
+        '//e0
       </div>
-      <div className="leading-none sharpie-text text-[4rem] w-full px-5 lg:px-10 md:text-[8rem] lg:text-[10rem] xl:text-[14rem] 2xl:text-[17rem] flex items-start justify-start lg:justify-center flex-col ">
+      <div className="leading-none sharpie-text text-[4rem] w-full h-full px-5 lg:px-10 md:text-[8rem] lg:text-[10rem] xl:text-[14rem] 2xl:text-[17rem] flex items-start justify-start lg:justify-start flex-col ">
         <p className="">
           DESIGNER <span className="text-primary ">&</span>
         </p>
         <p className="">DEVELOPER</p>
-      </div>
-      <div className="w-full lg:h-full flex flex-col items-start lg:items-start tracking-widest  text-lg lg:text-2xl xl:text-4xl px-5 lg:px-10 text-custom-whiteish  jura font-extralight justify-start">
-        <p className="leading-snug rounded-3xl italic relative">
-          {/* <span>I am A. Akhmadjonov. </span> */}
-          {/* <br /> */}
+        {/* <p className="text-lg text-custom-whiteish leading-snug rounded-3xl italic relative">
           <span>Crafting immersive digital </span>
           <br className="md:hidden" />
           <span>solutions that inspire.</span>
-        </p>
+        </p> */}
+      </div>
+      <div className="w-full gap-3 py-5  flex flex-col items-start lg:items-start tracking-widest  text-lg lg:text-2xl xl:text-4xl px-5 lg:px-0 text-custom-whiteish  jura font-extralight justify-start">
+        <div className="flex lg:self-end gap-3 w-72 lg:w-auto flex-col lg:flex-row text-lg lg:text-2xl items-start lg:items-center p-2 lg:px-1 lg:py-1 rounded-xl rounded-bl-[100px] rounded-tr-[100px] lg:rounded-xl lg:rounded-br-[100px] lg:rounded-tl-[100px] uppercase bg-primary ">
+          <div className=" self-end lg:mb-10 rounded-full bg-custom-deepgray px-4 py-2">
+            See my works
+          </div>
+          <div className=" text-5xl sharpie-text hidden lg:flex text-black">
+            &
+          </div>
+          <div className=" rounded-full bg-custom-deepgray lg:mt-10 px-4 py-2">
+            Reach out
+          </div>
+        </div>
       </div>
 
-      <div className="flex self-end w-full italic  items-end uppercase justify-center ">
+      <div className="flex self-end lg:hidden w-full italic  items-end uppercase justify-center ">
         <Link
           href="/gallery"
           className="absolute w-auto bg-primary text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-[20px] justify-between lg:rounded-none lg:rounded-tl-[50px]"
@@ -37,7 +46,7 @@ export default function Home() {
             <div className="w-full h-full bg-custom-red rounded-bl-[30px]"></div>
           </div> */}
           <p className="text-center text-custom-deepgray technor-text lg:pb-1 font-extralight">
-            EXPLORE
+            Gallery
           </p>
           <div className="flex h-full  gap-1 lg:gap-2 items-center ">
             <div className="flex lg:flex-col  items-center gap-1 lg:gap-2 ">
