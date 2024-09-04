@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MdPlayArrow } from "react-icons/md";
 export default function Home() {
   return (
@@ -22,7 +23,10 @@ export default function Home() {
       </div>
 
       <div className="flex self-end w-full italic  items-end uppercase justify-center ">
-        <div className="absolute w-auto bg-primary text-6xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-[20px] justify-center lg:rounded-none lg:rounded-tl-[50px]">
+        <Link
+          href="/gallery"
+          className="absolute w-auto bg-primary text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-[20px] justify-between lg:rounded-none lg:rounded-tl-[50px]"
+        >
           <div className=" hidden lg:flex w-8 h-1/3 absolute left-0 -translate-x-full bg-primary bottom-0">
             <div className="w-full h-full bg-custom-red rounded-br-[30px]"></div>
           </div>
@@ -36,15 +40,21 @@ export default function Home() {
             EXPLORE
           </p>
           <div className="flex h-full  gap-1 lg:gap-2 items-center ">
+            <div className="flex lg:flex-col  items-center gap-1 lg:gap-2 ">
+              <div className="h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
+            </div>
             <div className="flex flex-col items-center gap-1 lg:gap-2">
-              <div className="h-2 lg:h-3 w-2 lg:w-3 bg-custom-deepgray rounded-full"></div>
-              <div className="h-2 lg:h-3 w-2 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="lg:hidden h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
             </div>
             <div className="flex items-center flex-col ">
-              <div className="h-2 lg:h-3 w-2 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   );

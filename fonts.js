@@ -14,6 +14,12 @@ export const styro = localFont({
   ],
   variable: '--font-styro'
 })
+export const elevator = localFont({
+  src: [
+    { path: './public/fonts/tyler-jamieson-moulton-elevator-100.otf', weight: '100', style: 'normal' },
+  ],
+  variable: '--font-elevator'
+})
 export const technor = localFont({
   src: [
     { path: './public/fonts/Technor_Complete/Fonts/OTF/Technor-Black.otf', weight: '900', style: 'normal' },

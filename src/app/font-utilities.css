@@ -39,6 +39,9 @@
 .kola-text {
     font-family: var(--font-kola);
 }
+.elevator-text {
+    font-family: var(--font-elevator);
+}
 .array-text {
     font-family: var(--font-array);
 }

@@ -12,6 +12,7 @@ import {
   array,
   alpino,
   technor,
+  elevator,
   kola,
 } from "../../fonts";
 
@@ -33,6 +34,7 @@ export default function RootLayout({
       ${sharpie.variable} 
       ${pencerio.variable} 
       ${kalam.variable} 
+      ${elevator.variable} 
       ${epilogue.variable}
       ${array.variable}
       ${kola.variable}

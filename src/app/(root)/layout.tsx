@@ -76,7 +76,7 @@ export default function RootGroupLayout({
                 }  rounded-full transition-all duration-700  lg:bg-primary`}
               ></div>
             </div>
-            <div className="nav-open-2 transition-all duration-700 delay-500 flex items-center flex-col absolute -translate-x-16  translate-y-16  rotate-45  z-40 w-full h-full rounded-full justify-center">
+            <div className="nav-open-2 transition-all duration-700 delay-300 flex items-center flex-col absolute -translate-x-16  translate-y-16  rotate-45  z-40 w-full h-full rounded-full justify-center">
               <div className="w-6 h-1.5 bg-primary rounded-full rotate-[45deg] translate-x-3 "></div>
               <div className="w-10 h-1.5 bg-primary rounded-full"></div>
               <div className="w-6 h-1.5 bg-primary rounded-full -rotate-[45deg] translate-x-3"></div>
@@ -91,7 +91,7 @@ export default function RootGroupLayout({
           <div className="absolute select-none opacity-60 bottom-1 left-0 right-0 w-full h-full flex items-end justify-center text-xs pointer-events-none kalam-text">
             {funText}
           </div>
-          <div className="h-full w-full flex flex-col lg:flex-row  items-center justify-center gap-10 lg:gap-0 lg:justify-between px-20 text-5xl lg:text-5xl uppercase raleway array-text font-light">
+          <div className="h-full w-full flex flex-col lg:flex-row  items-center justify-center gap-10 lg:gap-0 lg:justify-between px-20 text-5xl lg:text-5xl uppercase array-text pb-0 font-light">
             <Link href="/" passHref>
               <div
                 data-attr="Figuratively."
