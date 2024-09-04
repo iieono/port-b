@@ -24,6 +24,7 @@ export default function RootGroupLayout({
   const pathname = usePathname();
   const mainContainerRef = useRef(null);
   const hamRef = useRef(null);
+  const innerNavRef = useRef(null);
   const [navOpen, setNavOpen] = useState(false);
   const [funText, setFunText] = useState<string>("");
   // fun texts
@@ -53,14 +54,17 @@ export default function RootGroupLayout({
           navOpen && "lg:rounded-bl-none"
         } lg:rounded-tr-none lg:rounded-br-none  lg:rounded-[100px] transition-all duration-700 `}
       >
-        <div className="h-full relative rounded-3xl lg:rounded-tr-none lg:rounded-[100px]  bg-custom-red">
+        <div className="h-full transition-all duration relative rounded-3xl lg:rounded-tr-none lg:rounded-[100px]  bg-custom-red">
           {children}
           <div
             ref={hamRef}
-            className="absolute overflow-hidden flex items-center   justify-center w-20 h-20 lg:bg-custom-gray top-0 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-full lg:border-4 border-primary"
+            className="absolute overflow-hidden flex items-center  justify-center w-20 h-20 lg:bg-custom-gray top-0 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-full lg:border-4 border-primary"
             onClick={() => setNavOpen((prev) => !prev)}
           >
-            <div className="nav-open-1 transition-all duration-700 delay-500 absolute   flex items-center flex-col gap-1 justify-center z-20 ">
+            <div
+              ref={innerNavRef}
+              className="nav-open-1 transition-all duration-700 delay-500 absolute   flex items-center flex-col gap-1 justify-center z-20 "
+            >
               <div
                 className={`${
                   navOpen ? "w-5 h-1 bg-custom-red" : "w-8 h-2 bg-primary"
@@ -87,7 +91,7 @@ export default function RootGroupLayout({
           <div className="absolute select-none opacity-60 bottom-1 left-0 right-0 w-full h-full flex items-end justify-center text-xs pointer-events-none kalam-text">
             {funText}
           </div>
-          <div className="h-full w-full flex flex-col lg:flex-row  items-center justify-center gap-10 lg:gap-0 lg:justify-between px-20 text-4xl lg:text-5xl uppercase raleway array-text font-light">
+          <div className="h-full w-full flex flex-col lg:flex-row  items-center justify-center gap-10 lg:gap-0 lg:justify-between px-20 text-5xl lg:text-5xl uppercase raleway array-text font-light">
             <Link href="/" passHref>
               <div
                 data-attr="Figuratively."

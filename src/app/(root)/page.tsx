@@ -21,17 +21,17 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex self-end w-full italic  items-end uppercase justify-center">
-        <div className="absolute w-full lg:w-auto bg-primary text-6xl  lg:text-8xl bottom-0 left-0 right-auto lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-6 flex items-center justify-center lg:rounded-tl-[50px]">
+      <div className="flex self-end w-full italic  items-end uppercase justify-center ">
+        <div className="absolute w-auto bg-primary text-6xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-[20px] justify-center lg:rounded-none lg:rounded-tl-[50px]">
           <div className=" hidden lg:flex w-8 h-1/3 absolute left-0 -translate-x-full bg-primary bottom-0">
             <div className="w-full h-full bg-custom-red rounded-br-[30px]"></div>
           </div>
-          <div className="w-8 h-1/2 absolute right-0 -translate-y-full bg-primary top-0">
+          <div className=" hidden lg:flex w-8 h-1/2 absolute right-0 -translate-y-full bg-primary top-0">
             <div className="w-full h-full bg-custom-red rounded-br-[30px]"></div>
           </div>
-          <div className="lg:hidden w-8 h-1/2 absolute left-0 -translate-y-full bg-primary top-0">
+          {/* <div className="hidden w-8 h-1/2 absolute left-0 -translate-y-full bg-primary top-0">
             <div className="w-full h-full bg-custom-red rounded-bl-[30px]"></div>
-          </div>
+          </div> */}
           <p className="text-center text-custom-deepgray technor-text lg:pb-1 font-extralight">
             EXPLORE
           </p>
