@@ -61,20 +61,26 @@ export default function RootGroupLayout({
   }, [pathname]);
   return (
     <main
-      className="min-h-screen antialiased bg-custom-red overflow-hidden"
+      className="min-h-screen antialiased bg-custom-red grainy-bg overflow-hidden"
       style={{ perspective: "1000px" }}
     >
       <div
         ref={mainContainerRef}
         className={`h-screen main-container flex flex-col  p-1 bg-primary rounded-none ${
           navOpen && "lg:rounded-bl-none delay-0"
-        } lg:rounded-tr-none lg:rounded-br-none  lg:rounded-[100px] transition-all duration-700 delay-700  `}
+        }  lg:rounded-br-none lg:rounded-bl-none lg:rounded-tr-none  lg:rounded-[100px] transition-all duration-700 delay-700  `}
       >
-        <div className="h-full transition-all duration relative rounded-3xl lg:rounded-tr-none lg:rounded-[100px]  bg-custom-red">
-          {children}
+        <div className="h-full transition-all duration relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-custom grainy-bg">
+          <div
+            className={`w-full h-full ${
+              navOpen && "grainy-bg"
+            } transition-all duration-700 delay-300 overflow-hidden rounded-3xl  lg:rounded-tr-none lg:rounded-bl-[65px]  lg:rounded-[100px]`}
+          >
+            {children}
+          </div>
           <div
             ref={hamRef}
-            className="absolute overflow-hidden flex items-center  justify-center w-20 h-20 lg:bg-custom-gray top-0 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-full lg:border-4 border-primary"
+            className="absolute overflow-hidden flex items-center  justify-center w-20 rounded-br-none rounded-tl-none h-14 lg:bg-custom-gray top-0 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-[40px] lg:border-4 lg:border-b-[1px] lg:border-l-[1px]  border-primary"
             onClick={() => setNavOpen((prev) => !prev)}
           >
             <div
@@ -93,9 +99,9 @@ export default function RootGroupLayout({
               ></div>
             </div>
             <div className="nav-open-2 transition-all duration-700 delay-300 flex items-center flex-col absolute -translate-x-16  translate-y-16  rotate-45  z-40 w-full h-full rounded-full justify-center">
-              <div className="w-6 h-1.5 bg-primary rounded-full rotate-[45deg] translate-x-3 "></div>
-              <div className="w-10 h-1.5 bg-primary rounded-full"></div>
-              <div className="w-6 h-1.5 bg-primary rounded-full -rotate-[45deg] translate-x-3"></div>
+              <div className="w-5 h-1.5 bg-primary rounded-full rotate-[45deg] translate-x-3 "></div>
+              <div className="w-8 h-1.5 bg-primary rounded-full"></div>
+              <div className="w-5 h-1.5 bg-primary rounded-full -rotate-[45deg] translate-x-3"></div>
             </div>
           </div>
         </div>

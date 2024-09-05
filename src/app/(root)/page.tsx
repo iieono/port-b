@@ -1,34 +1,112 @@
+"use client";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 import { MdPlayArrow } from "react-icons/md";
 export default function Home() {
+  const roundRef = useRef<HTMLDivElement | null>(null);
+  const targetPosition = useRef({ x: 0, y: 0 });
+  const initialPosition = useRef({ x: 0, y: 0 });
+  const position = useRef({ x: 0, y: 0 });
+
+  // Fixed speed of movement in pixels per frame
+  const speed = 0.05; // Adjust this value to control the movement speed
+  const maxDistance = 40; // Maximum distance the element can move from its initial position
+
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      targetPosition.current = { x: event.clientX, y: event.clientY };
+    };
+
+    const updatePosition = () => {
+      if (roundRef.current) {
+        const rect = roundRef.current.getBoundingClientRect();
+        const elementCenterX = rect.left + rect.width / 2;
+        const elementCenterY = rect.top + rect.height / 2;
+
+        // Calculate the distance to the target
+        const dx =
+          targetPosition.current.x - (elementCenterX + position.current.x);
+        const dy =
+          targetPosition.current.y - (elementCenterY + position.current.y);
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance > 0) {
+          // Normalize direction vector and scale by speed
+          const moveX = (dx / distance) * speed;
+          const moveY = (dy / distance) * speed;
+
+          // Update position with bounds
+          position.current.x += moveX;
+          position.current.y += moveY;
+
+          // Calculate the distance from the initial position
+          const distFromInitial = Math.sqrt(
+            Math.pow(position.current.x, 2) + Math.pow(position.current.y, 2)
+          );
+
+          // Constrain the movement within the maxDistance
+          if (distFromInitial > maxDistance) {
+            const scale = maxDistance / distFromInitial;
+            position.current.x *= scale;
+            position.current.y *= scale;
+          }
+
+          // Apply the transform with the -50%, -50% centering and offset by the current position
+          roundRef.current.style.transform = `translate(-50%, -50%) translate(${position.current.x}px, ${position.current.y}px)`;
+        }
+      }
+
+      // Request the next frame update
+      requestAnimationFrame(updatePosition);
+    };
+
+    if (roundRef.current) {
+      // Set the initial position
+      const rect = roundRef.current.getBoundingClientRect();
+      initialPosition.current = {
+        x: rect.left + rect.width / 2,
+        y: rect.top + rect.height / 2,
+      };
+    }
+
+    window.addEventListener("mousemove", handleMouseMove);
+    updatePosition();
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
   return (
-    <div className=" h-full w-full flex items-center lg:items-start justify-start gap-3 lg:justify-between  flex-col p-2 py-5  lg:p-0 pt-20 lg:pt-10 lg:px-5">
-      <div className=" text-2xl  text-primary absolute lg:relative lg:text-6xl lg:pl-5 top-6 left-7  pen-text">
+    <div className=" h-full w-full flex items-center lg:items-start justify-start gap-3 lg:justify-between  flex-col p-2 py-5  lg:p-5 pt-20">
+      <div className=" text-2xl  text-primary absolute  lg:text-4xl lg:pl-5 lg:top-8 lg:left-10 top-6 left-7 pen-text">
         '//e0
       </div>
-      <div className="hidden lg:flex h-[60%] 2xl:h-[90%] aspect-square bg-primary/10 z-20 backdrop-blur-sm shadow-2xl blur-sm rounded-full absolute left-1/2 -translate-x-1/2 -translate-y-1/2 right-0 top-1/2"></div>
+      <div
+        ref={roundRef}
+        className="hidden lg:flex  h-[60%] 2xl:h-[90%] aspect-square z-20 bg-primary/5  backdrop-blur-sm shadow-2xl blur-sm rounded-full absolute left-1/2 -translate-x-1/2 -translate-y-1/2 right-0 top-1/2"
+      ></div>
 
       <div className="leading-none sharpie-text text-[4rem] w-full h-full px-5 lg:px-10 md:text-[8rem] lg:text-[10rem] xl:text-[14rem] 2xl:text-[17rem] flex items-start justify-start lg:justify-center flex-col ">
         <div className="flex justify-between items-center w-full">
-          <div className=" text-shadow-lg">
+          <div className=" text-shadow-sm lg:px-3">
             DESIGNER{" "}
             <span className="text-primary lg:hidden lg:text-4xl">&</span>
           </div>
-          <div className="text-lg hidden lg:flex flex-col items-end ps-10 justify-start lg:h-2/3  lg:w-1/3  lg:text-base  xl:text-lg perma font-light text-primary leading-snug rounded-3xl italic relative">
+          <div className="text-lg hidden lg:flex flex-col items-end ps-10 justify-start lg:h-full pt-3 xl:pt-5  lg:w-1/3  lg:text-base  xl:text-lg perma font-light text-primary leading-snug rounded-3xl italic relative">
             {/* <p>I am A. Akhmadjonov. </p> */}
             <p> I craft immersive digital </p>
 
             <p> solutions that inspire.</p>
           </div>
         </div>
-        <div className="self-end flex justify-end w-full items-start gap-5 relative">
-          <div className="hidden lg:flex flex-col items-start justify-end  w-full  text-primary perma h-3/4 text-base jetbrains">
+        <div className="self-end flex justify-end w-full  items-start gap-5 relative">
+          <div className="hidden lg:flex flex-col items-start justify-end  w-full h-full pb-5 xl:pb-10  text-primary perma text-base jetbrains">
             <div className="hover:pl-3 transition-all duration-700">github</div>
             <div className="hover:pl-3 transition-all duration-700">email</div>
             <div></div>
           </div>
           {/* <div className="text-primary hidden lg:flex">&</div> */}
-          <div className="text-shadow-lg">DEVELOPER</div>
+          <div className="text-shadow-sm lg:px-2">DEVELOPER</div>
         </div>
         <div className="text-lg flex lg:hidden flex-col items-start justify-center jura  lg:text-xl  xl:text-lg jetbrains  text-primary leading-snug rounded-3xl italic relative">
           <p>Hi! I am A. Akhmadjonov. </p>
@@ -38,19 +116,19 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full gap-3 py-8 hidden lg:flex flex-col items-center lg:items-start tracking-widest  text-lg lg:text-2xl xl:text-4xl px-5 lg:px-3 text-primary  jura font-extralight justify-start">
-        <div className="flex lg:self-end shadow-2xl  gap-3 w-72 lg:w-auto flex-col lg:flex-row text-lg lg:text-4xl items-start lg:items-center p-2 lg:px-2 lg:py-2 rounded-xl transition-all duration-700 rounded-bl-[100px] rounded-tr-[100px] lg:rounded-xl lg:rounded-br-[100px] lg:rounded-tl-[100px] uppercase  ">
-          <div className=" self-end hover:shadow-2xl lg:mb-10 sharpie-text transition-all duration-700 rounded-full bg-custom-deepgray/80 backdrop-blur-lg px-4 py-2">
+      {/* <div className="w-full gap-3 py-2 hidden lg:flex flex-col items-center lg:items-start tracking-widest  text-lg lg:text-2xl xl:text-4xl px-5 lg:px-3 text-primary  jura font-extralight justify-start">
+        <div className="flex lg:self-end shadow-2xl  gap-3 w-72 lg:w-auto flex-col lg:flex-row text-lg lg:text-4xl items-start lg:items-center p-2 lg:px-2 lg:py-2 rounded-xl transition-all duration-700 rounded-bl-[100px] rounded-tr-[100px] lg:rounded-xl lg:rounded-br-[100px] lg:rounded-tl-[100px] uppercase bg-primary ">
+          <div className=" self-end hover:shadow-2xl lg:mb-10 sharpie-text transition-all duration-700 rounded-full bg-custom-deepgray/100 backdrop-blur-lg px-4 py-2">
             See my works
           </div>
-          <div className=" text-5xl sharpie-text self-center text-primary">
+          <div className=" text-5xl sharpie-text self-center text-custom-deepgray">
             &
           </div>
-          <div className=" rounded-full kalam-text hover:shadow-2xl transition-all duration-700 bg-custom-deepgray/80 backdrop-blur-lg lg:mt-10 px-4 py-2">
+          <div className=" rounded-full kalam-text hover:shadow-2xl transition-all duration-700 bg-custom-deepgray/100 backdrop-blur-lg lg:mt-10 px-4 py-2">
             Reach out
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="flex self-end lg:hidden w-full italic  items-end uppercase justify-center ">
         <Link
