@@ -70,7 +70,7 @@ export default function RootGroupLayout({
           navOpen && "lg:rounded-bl-none delay-0"
         }  lg:rounded-br-none lg:rounded-bl-none lg:rounded-tr-none  lg:rounded-[100px] transition-all duration-700 delay-700  `}
       >
-        <div className="h-full transition-all duration relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-custom bg-custom-red">
+        <div className="h-full transition-all duration relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-custom ">
           <div
             className={`w-full h-full grainy-bg ${
               navOpen && "active"
