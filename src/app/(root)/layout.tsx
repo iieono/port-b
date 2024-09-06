@@ -70,17 +70,17 @@ export default function RootGroupLayout({
           navOpen && "lg:rounded-bl-none delay-0"
         }  lg:rounded-br-none lg:rounded-bl-none lg:rounded-tr-none  lg:rounded-[100px] transition-all duration-700 delay-700  `}
       >
-        <div className="h-full transition-all duration relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-custom grainy-bg">
+        <div className="h-full transition-all duration relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-custom bg-custom-red">
           <div
-            className={`w-full h-full ${
-              navOpen && "grainy-bg"
+            className={`w-full h-full grainy-bg ${
+              navOpen && "active"
             } transition-all duration-700 delay-300 overflow-hidden rounded-3xl  lg:rounded-tr-none lg:rounded-bl-[65px]  lg:rounded-[100px]`}
           >
             {children}
           </div>
           <div
             ref={hamRef}
-            className="absolute overflow-hidden flex items-center  justify-center w-20 rounded-br-none rounded-tl-none h-14 lg:bg-custom-gray top-0 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-[40px] lg:border-4 lg:border-b-[1px] lg:border-l-[1px]  border-primary"
+            className="absolute overflow-hidden flex items-center  justify-center w-20 rounded-br-none rounded-tl-none h-14 lg:bg-custom-gray top-3 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-[40px] lg:border-4 lg:border-b-[1px] lg:border-l-[1px]  border-primary"
             onClick={() => setNavOpen((prev) => !prev)}
           >
             <div

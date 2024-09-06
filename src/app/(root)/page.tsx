@@ -88,7 +88,7 @@ export default function Home() {
 
       <div className="leading-none sharpie-text text-[4rem] w-full h-full px-5 lg:px-10 md:text-[8rem] lg:text-[10rem] xl:text-[14rem] 2xl:text-[17rem] flex items-start justify-start lg:justify-center flex-col ">
         <div className="flex justify-between items-center w-full">
-          <div className=" text-shadow-sm lg:px-3">
+          <div className="  lg:px-3">
             DESIGNER{" "}
             <span className="text-primary lg:hidden lg:text-4xl">&</span>
           </div>
@@ -99,16 +99,16 @@ export default function Home() {
             <p> solutions that inspire.</p>
           </div>
         </div>
-        <div className="self-end flex justify-end w-full  items-start gap-5 relative">
+        <div className="self-end flex lg:justify-end w-full  items-start gap-5 relative">
           <div className="hidden lg:flex flex-col items-start justify-end  w-full h-full pb-5 xl:pb-10  text-primary perma text-base jetbrains">
             <div className="hover:pl-3 transition-all duration-700">github</div>
             <div className="hover:pl-3 transition-all duration-700">email</div>
             <div></div>
           </div>
           {/* <div className="text-primary hidden lg:flex">&</div> */}
-          <div className="text-shadow-sm lg:px-2">DEVELOPER</div>
+          <div className=" lg:px-2">DEVELOPER</div>
         </div>
-        <div className="text-lg flex lg:hidden flex-col items-start justify-center jura  lg:text-xl  xl:text-lg jetbrains  text-primary leading-snug rounded-3xl italic relative">
+        <div className="text-sm leading-6 flex lg:hidden flex-col items-start pt-3 justify-center jetbrains  lg:text-xl  xl:text-lg jetbrains  text-primary  rounded-3xl italic relative">
           <p>Hi! I am A. Akhmadjonov. </p>
           <p> I craft immersive digital </p>
 
@@ -133,7 +133,7 @@ export default function Home() {
       <div className="flex self-end lg:hidden w-full italic  items-end uppercase justify-center ">
         <Link
           href="/gallery"
-          className="absolute w-auto bg-primary shadow-2xl text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-[20px] justify-between lg:rounded-none lg:rounded-tl-[50px]"
+          className="absolute w-auto bg-primary backdrop-blur-lg shadow-2xl text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-[20px] justify-between lg:rounded-none lg:rounded-tl-[50px]"
         >
           <div className=" hidden lg:flex w-8 h-1/3 absolute left-0 -translate-x-full bg-primary bottom-0">
             <div className="w-full h-full bg-custom-red rounded-br-[30px]"></div>
