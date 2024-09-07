@@ -70,11 +70,15 @@ export default function RootGroupLayout({
           navOpen && "lg:rounded-bl-none delay-0"
         }  lg:rounded-br-none lg:rounded-bl-none lg:rounded-tr-none  lg:rounded-[100px] transition-all duration-700 delay-700  `}
       >
-        <div className="h-full transition-all duration relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-black ">
+        <div
+          className={`${
+            navOpen
+              ? "h-[calc(100%-7rem)] "
+              : "h-full delay-700 lg:delay-500 duration-1000"
+          } transition-all duration-1000 relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-black `}
+        >
           <div
-            className={`w-full h-full grainy-bg ${
-              true && "active"
-            } transition-all duration-700 delay-300 overflow-hidden rounded-3xl  lg:rounded-tr-none lg:rounded-bl-[65px]  lg:rounded-[100px]`}
+            className={`w-full active h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden rounded-3xl  lg:rounded-tr-none lg:rounded-bl-[65px]  lg:rounded-[100px]`}
           >
             {children}
           </div>

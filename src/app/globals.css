@@ -7,6 +7,17 @@
   margin: 0;
   box-sizing: border-box;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
 .nav-item{
   cursor: pointer;
   user-select: none;
@@ -63,4 +74,13 @@
   background: rgb(218, 57, 42);
   background: radial-gradient(circle, rgba(218, 57, 42, 1) 0%, rgba(255, 255, 227, 1) 0%, rgba(69, 71, 75, 1) 100%);
 }
+.gallery-container{
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-y-1 lg:gap-1 p-1 pt-20 lg:p-0 lg:py-10
 
+}
+.gallery-item{
+  @apply bg-primary/40 backdrop-blur-lg rounded-3xl min-h-96
+}
+.gallery-item.large{
+  @apply col-span-2
+}
