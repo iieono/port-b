@@ -79,7 +79,7 @@ export default function Home() {
   }, []);
   return (
     <div className=" h-full w-full flex items-center lg:items-start justify-start gap-3 lg:justify-between  flex-col p-2 py-5  lg:p-5 pt-20">
-      <div className=" text-2xl  text-primary absolute  lg:text-4xl lg:pl-5 lg:top-8 lg:left-12 xl:left-16 top-6 left-8 md:left-9 pen-text">
+      <div className=" text-2xl  text-primary absolute  lg:text-4xl lg:pl-5 lg:top-10 lg:left-12 xl:left-16 top-6 left-8 md:left-9 pen-text">
         '//e0
       </div>
       {/* <div
@@ -93,23 +93,31 @@ export default function Home() {
             DESIGNER
             <span className="text-primary lg:hidden lg:text-4xl">&</span>
           </div>
-          <div className="text-lg hidden lg:flex flex-col items-end ps-10 justify-start lg:h-full pt-3 md:pr-2 xl:pt-8 xl:pr-3 lg:w-1/3  lg:text-base  xl:text-lg perma font-light text-primary leading-snug rounded-3xl italic relative">
+          <div className="text-lg group hidden lg:flex flex-col items-end ps-10 justify-start lg:h-full pt-3 md:pr-2 xl:pt-6 xl:pr-3 lg:w-1/3  lg:text-base  xl:text-lg perma font-light text-primary leading-snug rounded-3xl italic relative">
             {/* <p>I am A. Akhmadjonov. </p> */}
-            <p> I craft immersive digital </p>
+            <p className="group-hover:pr-2 transition-all duration-1000">
+              I craft immersive digital
+            </p>
 
-            <p> solutions that inspire.</p>
+            <p className="group-hover:pr-8 transition-all delay-300 duration-1000">
+              solutions that inspire.
+            </p>
           </div>
         </div>
         <div className="self-end flex lg:justify-end w-full  items-start gap-5 relative">
-          <div className="hidden lg:flex flex-col items-start justify-end  w-full h-full pb-5 md:pl-3 xl:pb-11 xl:pl-6  text-primary perma text-base jetbrains">
-            <div className="hover:pl-3 transition-all duration-700">github</div>
-            <div className="hover:pl-3 transition-all duration-700">email</div>
+          <div className="hidden lg:flex flex-col items-start justify-end  w-full h-full pb-5 md:pl-3 xl:pb-8 xl:pl-6  text-primary perma text-base jetbrains">
+            <div className="hover:pl-3 transition-all duration-700 cursor-pointer">
+              github
+            </div>
+            <div className="hover:pl-3 transition-all duration-700  cursor-pointer">
+              email
+            </div>
             <div></div>
           </div>
           {/* <div className="text-primary hidden lg:flex">&</div> */}
           <div className="">DEVELOPER</div>
         </div>
-        <div className="text-sm leading-6 px-1 md:px-2 flex lg:hidden flex-col items-start pt-3 justify-center jetbrains  lg:text-xl  xl:text-lg jetbrains  text-primary  rounded-3xl italic relative">
+        <div className="text-sm leading-6 px-1 md:px-2 flex lg:hidden flex-col items-start pt-3 justify-center jetbrains  lg:text-xl  xl:text-lg chillax-text  text-primary  rounded-3xl italic relative">
           <p>Hi! I am A. Akhmadjonov. </p>
           <p> I craft immersive digital </p>
 
