@@ -13,6 +13,10 @@ import {
   alpino,
   technor,
   elevator,
+  boxing,
+  switzer,
+  satoshi,
+  chillax,
   kola,
 } from "../../fonts";
 
@@ -37,9 +41,13 @@ export default function RootLayout({
       ${elevator.variable} 
       ${epilogue.variable}
       ${array.variable}
+      ${chillax.variable}
+      ${boxing.variable}
       ${kola.variable}
       ${technor.variable}
       ${alpino.variable}
+      ${switzer.variable}
+      ${satoshi.variable}
     `}
     >
       <body>{children}</body>

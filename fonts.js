@@ -14,6 +14,24 @@ export const styro = localFont({
   ],
   variable: '--font-styro'
 })
+export const chillax = localFont({
+  src: [
+    
+    { path: './public/fonts/Chillax_Complete/Fonts/OTF/Chillax-Bold.otf', weight: '700', style: 'normal' },
+    { path: './public/fonts/Chillax_Complete/Fonts/OTF/Chillax-Extralight.otf', weight: '200', style: 'normal' },
+    { path: './public/fonts/Chillax_Complete/Fonts/OTF/Chillax-Light.otf', weight: '300', style: 'normal' },
+    { path: './public/fonts/Chillax_Complete/Fonts/OTF/Chillax-Medium.otf', weight: '500', style: 'normal' },
+    { path: './public/fonts/Chillax_Complete/Fonts/OTF/Chillax-Regular.otf', weight: '400', style: 'normal' },
+    { path: './public/fonts/Chillax_Complete/Fonts/OTF/Chillax-Semibold.otf', weight: '600', style: 'normal' },
+  ],
+  variable: '--font-chillax'
+})
+export const boxing = localFont({
+  src: [
+    { path: './public/fonts/Boxing_Complete/Fonts/OTF/Boxing-Regular.otf', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-boxing'
+})
 export const elevator = localFont({
   src: [
     { path: './public/fonts/tyler-jamieson-moulton-elevator-100.otf', weight: '100', style: 'normal' },
@@ -97,6 +115,45 @@ export const epilogue = localFont({
   ],
   variable: '--font-epilogue'
 })
+export const switzer = localFont({
+  src: [
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-Black.otf', weight: '900', style: 'normal' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-BlackItalic.otf', weight: '900', style: 'italic' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-Bold.otf', weight: '700', style: 'normal' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-BoldItalic.otf', weight: '700', style: 'italic' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-ExtraBold.otf', weight: '800', style: 'normal' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-ExtraBoldItalic.otf', weight: '800', style: 'italic' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-ExtraLight.otf', weight: '200', style: 'normal' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-ExtraLightItalic.otf', weight: '200', style: 'italic' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-Italic.otf', weight: '400', style: 'italic' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-Light.otf', weight: '300', style: 'normal' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-LightItalic.otf', weight: '300', style: 'italic' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-Medium.otf', weight: '500', style: 'normal' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-MediumItalic.otf', weight: '500', style: 'italic' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-Regular.otf', weight: '400', style: 'normal' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-SemiBold.otf', weight: '600', style: 'normal' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-SemiBoldItalic.otf', weight: '600', style: 'italic' },
+    { path: './public/fonts/Switzer_Complete/Fonts/OTF/Switzer-Thin.otf', weight: '100', style: 'normal' },
+  ],
+  variable: '--font-switzer'
+})
+// Epilogue Complete
+export const satoshi = localFont({
+  src: [
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Black.otf', weight: '900', style: 'normal' },
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-BlackItalic.otf', weight: '900', style: 'italic' },
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Bold.otf', weight: '700', style: 'normal' },
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-BoldItalic.otf', weight: '700', style: 'italic' },
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Italic.otf', weight: '400', style: 'italic' },
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Light.otf', weight: '300', style: 'normal' },
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-LightItalic.otf', weight: '300', style: 'italic' },
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Medium.otf', weight: '500', style: 'normal' },
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-MediumItalic.otf', weight: '500', style: 'italic' },
+    { path: './public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-satoshi'
+})
+
 export const array = localFont({
   src: [
     { path: './public/fonts/Array_Complete/Fonts/OTF/Array-Bold.otf', weight: '700', style: 'normal' },

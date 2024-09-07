@@ -40,6 +40,18 @@
 .epilogue-text {
     font-family: var(--font-epilogue);
 }
+.chillax-text {
+    font-family: var(--font-chillax);
+}
+.boxing-text {
+    font-family: var(--font-boxing);
+}
+.satoshi-text {
+    font-family: var(--font-satoshi);
+}
+.switzer-text {
+    font-family: var(--font-switzer);
+}
 .kola-text {
     font-family: var(--font-kola);
 }
