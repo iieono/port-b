@@ -1,91 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { MdPlayArrow } from "react-icons/md";
+
 export default function Home() {
-  const roundRef = useRef<HTMLDivElement | null>(null);
-  const targetPosition = useRef({ x: 0, y: 0 });
-  const initialPosition = useRef({ x: 0, y: 0 });
-  const position = useRef({ x: 0, y: 0 });
-
-  // Fixed speed of movement in pixels per frame
-  const speed = 0.05; // Adjust this value to control the movement speed
-  const maxDistance = 40; // Maximum distance the element can move from its initial position
-
-  useEffect(() => {
-    return;
-    const handleMouseMove = (event: MouseEvent) => {
-      targetPosition.current = { x: event.clientX, y: event.clientY };
-    };
-
-    const updatePosition = () => {
-      if (roundRef.current) {
-        const rect = roundRef.current.getBoundingClientRect();
-        const elementCenterX = rect.left + rect.width / 2;
-        const elementCenterY = rect.top + rect.height / 2;
-
-        // Calculate the distance to the target
-        const dx =
-          targetPosition.current.x - (elementCenterX + position.current.x);
-        const dy =
-          targetPosition.current.y - (elementCenterY + position.current.y);
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance > 0) {
-          // Normalize direction vector and scale by speed
-          const moveX = (dx / distance) * speed;
-          const moveY = (dy / distance) * speed;
-
-          // Update position with bounds
-          position.current.x += moveX;
-          position.current.y += moveY;
-
-          // Calculate the distance from the initial position
-          const distFromInitial = Math.sqrt(
-            Math.pow(position.current.x, 2) + Math.pow(position.current.y, 2)
-          );
-
-          // Constrain the movement within the maxDistance
-          if (distFromInitial > maxDistance) {
-            const scale = maxDistance / distFromInitial;
-            position.current.x *= scale;
-            position.current.y *= scale;
-          }
-
-          // Apply the transform with the -50%, -50% centering and offset by the current position
-          roundRef.current.style.transform = `translate(-50%, -50%) translate(${position.current.x}px, ${position.current.y}px)`;
-        }
-      }
-
-      // Request the next frame update
-      requestAnimationFrame(updatePosition);
-    };
-
-    if (roundRef.current) {
-      // Set the initial position
-      const rect = roundRef.current.getBoundingClientRect();
-      initialPosition.current = {
-        x: rect.left + rect.width / 2,
-        y: rect.top + rect.height / 2,
-      };
-    }
-
-    window.addEventListener("mousemove", handleMouseMove);
-    updatePosition();
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
   return (
     <div className=" h-full w-full flex items-center lg:items-start justify-start gap-3 lg:justify-between  flex-col p-2 py-5  lg:p-5 pt-20">
       <div className=" text-2xl  text-primary absolute  lg:text-4xl lg:pl-5 lg:top-10 lg:left-12 xl:left-16 top-6 left-8 md:left-9 pen-text">
         '//e0
       </div>
-      {/* <div
-        ref={roundRef}
-        className="hidden lg:flex  h-[60%] 2xl:h-[90%] aspect-square z-20 bg-primary/5  backdrop-blur-sm shadow-2xl blur-sm rounded-full absolute left-1/2 -translate-x-1/2 -translate-y-1/2 right-0 top-1/2"
-      ></div> */}
 
       <div className="leading-none chillax-text font-semibold text-custom-red text-[3.15rem] w-full h-full  px-5 lg:px-10 md:text-[6rem] lg:text-[8rem] xl:text-[12rem] 2xl:text-[14rem] flex items-start justify-start lg:justify-center flex-col ">
         <div className="flex justify-between items-center w-full">
