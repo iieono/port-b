@@ -16,6 +16,16 @@ export default function RootGroupLayout({
       gsap.from(hamRef.current, {
         duration: 2,
         y: 100,
+        x: -100,
+        filter: "blur(10px)",
+        ease: "power2.out",
+      });
+    } else {
+      gsap.from(hamRef.current, {
+        duration: 3,
+        // y: 40,
+        opacity: 0,
+        filter: "blur(10px)",
         ease: "power2.out",
       });
     }
@@ -73,7 +83,7 @@ export default function RootGroupLayout({
         <div
           className={`${
             navOpen
-              ? "h-[calc(100%-7rem)] "
+              ? "h-full lg:h-[calc(100%-7rem)] "
               : "h-full delay-700 lg:delay-500 duration-1000"
           } transition-all duration-1000 relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-black `}
         >
@@ -84,7 +94,7 @@ export default function RootGroupLayout({
           </div>
           <div
             ref={hamRef}
-            className="absolute overflow-hidden flex items-center  justify-center w-20 rounded-br-none rounded-tl-none h-14 lg:bg-custom-red top-3 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-[40px] lg:border-4 lg:border-b-[1px] lg:border-l-[1px]  border-primary"
+            className="absolute overflow-hidden flex items-center  justify-center w-20 z-20 rounded-br-none rounded-tl-none h-14 lg:bg-custom-gray top-3 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-[40px] lg:border-4 lg:border-b-[1px] lg:border-l-[1px]  border-primary"
             onClick={() => setNavOpen((prev) => !prev)}
           >
             <div
@@ -113,7 +123,7 @@ export default function RootGroupLayout({
           className={`w-full ${
             navOpen
               ? "h-full lg:h-28 rounded-t-none duration-700"
-              : "h-0 rounded-t-full delay-700 lg:delay-500 duration-1000"
+              : "h-0 rounded-t-full  lg:delay-500 duration-1000"
           } overflow-hidden flex justify-between  transition-all bg-primary lg:rounded-t-none lg:bg-transparent gap-5 left-0 bottom-0 absolute lg:relative `}
         >
           <div

@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <div className=" h-full w-full flex items-start flex-col lg:flex-row justify-between gap-3 text-primary p-1 pb-0 lg:p-0 overflow-auto">
-      <div className="text-4xl lg:text-8xl pen-text text-primary py-20 w-full h-screen lg:h-full flex items-center flex-col gap-5">
+      <div className="text-4xl lg:text-8xl pen-text text-primary py-20 w-full h-screen lg:h-full flex items-center flex-col gap-6">
         <div className=" absolute lg:relative top-5 left-5 self-center w-full lg:w-2/3  px-3">
           Hello<span className="text-custom-red">!</span>
         </div>

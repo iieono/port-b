@@ -1,32 +1,96 @@
 "use client";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import Link from "next/link";
 
 export default function Home() {
+  useGSAP(() => {
+    if (window.innerWidth > 1024) {
+      gsap.from(".hero-title span", {
+        y: 40,
+        x: -10,
+        opacity: 0,
+        filter: "blur(10px)",
+        color: "white",
+        duration: 1,
+        stagger: 0.05,
+        ease: "power1.out",
+      });
+    } else {
+      gsap.from(".hero-title", {
+        y: 10,
+        x: -5,
+        opacity: 0,
+        filter: "blur(10px)",
+        color: "white",
+        duration: 1,
+        stagger: 0.3,
+        ease: "power1.out",
+      });
+    }
+    gsap.from(".hero-para", {
+      y: 40,
+      x: -10,
+      opacity: 0,
+      delay: 0.2,
+      filter: "blur(3px)",
+      duration: 1.3,
+      stagger: -0.3,
+      ease: "power1.out",
+    });
+    gsap.from(".hero-para-small p", {
+      y: 10,
+      x: -10,
+      opacity: 0,
+      delay: 1,
+      filter: "blur(3px)",
+      duration: 1.3,
+      stagger: 0.3,
+      ease: "power1.out",
+    });
+    gsap.from(".hero-name", {
+      color: "#da392a",
+      width: 0,
+      filter: "blur(3px)",
+      delay: 0.3,
+      duration: 2.6,
+      ease: "power1.out",
+    });
+  });
   return (
     <div className=" h-full w-full flex items-center lg:items-start justify-start gap-3 lg:justify-between  flex-col p-2 py-5  lg:p-5 pt-20">
-      <div className=" text-2xl  text-primary absolute  lg:text-4xl lg:pl-5 lg:top-10 lg:left-12 xl:left-16 top-6 left-8 md:left-9 pen-text">
+      <div className="hero-name text-2xl  w-32 overflow-hidden text-primary absolute  lg:text-4xl lg:pl-5 lg:top-12 lg:left-12 xl:left-16 top-6 left-8 md:left-9 pen-text">
         '//e0
       </div>
 
       <div className="leading-none chillax-text font-semibold text-custom-red text-[3.15rem] w-full h-full  px-5 lg:px-10 md:text-[6rem] lg:text-[8rem] xl:text-[12rem] 2xl:text-[14rem] flex items-start justify-start lg:justify-center flex-col ">
         <div className="flex justify-between items-center w-full">
-          <div className=" ">
-            DESIGNER
-            <span className="text-primary lg:hidden lg:text-4xl">&</span>
+          <div className="hero-title origin-top-left flex uppercase lg:px-1">
+            <span>d</span>
+            <span>e</span>
+            <span>s</span>
+            <span>i</span>
+            <span>g</span>
+            <span>n</span>
+            <span>e</span>
+            <span>r</span>
+            <span className="text-primary font-medium border border-white">
+              &
+            </span>
           </div>
-          <div className="text-lg group hidden lg:flex flex-col items-end ps-10 justify-start lg:h-full pt-3 md:pr-2 xl:pt-6 xl:pr-3 lg:w-1/3  lg:text-base  xl:text-lg perma font-light text-primary leading-snug rounded-3xl italic relative">
+          <div className="hero-para text-lg group hidden lg:flex flex-col items-end ps-10 justify-start lg:h-full pt-3 md:pr-2 xl:pt-6 xl:pr-3 lg:w-1/3  lg:text-base  xl:text-lg perma font-light text-primary leading-snug rounded-3xl italic relative">
             {/* <p>I am A. Akhmadjonov. </p> */}
-            <p className="group-hover:pr-2 transition-all duration-1000">
+            <p className=" flex group-hover:pr-2 transition-all duration-1000">
               I craft immersive digital
             </p>
 
-            <p className="group-hover:pr-8 transition-all delay-300 duration-1000">
+            <p className="  flex group-hover:pr-8 transition-all delay-300 duration-1000">
               solutions that inspire.
             </p>
           </div>
         </div>
         <div className="self-end flex lg:justify-end w-full  items-start gap-5 relative">
-          <div className="hidden lg:flex flex-col items-start justify-end  w-full h-full pb-5 md:pl-3 xl:pb-8 xl:pl-6  text-primary perma text-base jetbrains">
+          <div className="hero-para hidden lg:flex flex-col items-start justify-end  h-full pb-5 md:pl-3 xl:pb-8 xl:pl-6  text-primary perma text-base jetbrains">
             <div className="hover:pl-3 transition-all duration-700 cursor-pointer">
               github
             </div>
@@ -36,9 +100,19 @@ export default function Home() {
             <div></div>
           </div>
           {/* <div className="text-primary hidden lg:flex">&</div> */}
-          <div className="">DEVELOPER</div>
+          <div className="uppercase origin-top-left flex lg:px-1 lg:justify-end w-full hero-title">
+            <span>d</span>
+            <span>e</span>
+            <span>v</span>
+            <span>e</span>
+            <span>l</span>
+            <span>o</span>
+            <span>p</span>
+            <span>e</span>
+            <span>r</span>
+          </div>
         </div>
-        <div className="text-sm leading-6 px-1 md:px-2 flex lg:hidden flex-col items-start pt-3 justify-center jetbrains  lg:text-xl  xl:text-lg chillax-text  text-primary  rounded-3xl italic relative">
+        <div className="hero-para-small text-sm leading-6 px-1 md:px-2 flex lg:hidden flex-col items-start pt-3 justify-center jetbrains  lg:text-xl  xl:text-lg chillax-text  text-primary  rounded-3xl italic relative">
           <p>Hi! I am A. Akhmadjonov. </p>
           <p> I craft immersive digital </p>
 
