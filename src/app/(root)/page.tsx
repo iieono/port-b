@@ -64,7 +64,7 @@ export default function Home() {
       </div>
 
       <div className="leading-none chillax-text font-semibold text-custom-red text-[3.15rem] w-full h-full  px-5 lg:px-10 md:text-[6rem] lg:text-[8rem] xl:text-[12rem] 2xl:text-[14rem] flex items-start justify-start lg:justify-center flex-col ">
-        <div className="flex justify-between items-center w-full">
+        <div className="flex justify-betwee items-center w-full">
           <div className="hero-title origin-top-left flex uppercase lg:px-1">
             <span>d</span>
             <span>e</span>
@@ -74,9 +74,16 @@ export default function Home() {
             <span>n</span>
             <span>e</span>
             <span>r</span>
-            <span className="text-primary font-medium border border-white">
+            <div className="text-primary font-medium relative">
+              <div className="absolute border border-primary w-full h-full">
+                <div className="absolute w-5 h-5  border-t border-r -right-5 -top-5"></div>
+                <div className="absolute w-3 h-3 rounded-full bg-primary -left-1.5 -top-1.5"></div>
+                <div className="absolute w-3 h-3 rounded-full bg-primary -right-1.5 -top-1.5"></div>
+                <div className="absolute w-3 h-3 rounded-full bg-primary -left-1.5 -bottom-1.5"></div>
+                <div className="absolute w-3 h-3 rounded-full bg-primary -right-1.5 -bottom-1.5"></div>
+              </div>
               &
-            </span>
+            </div>
           </div>
           <div className="hero-para text-lg group hidden lg:flex flex-col items-end ps-10 justify-start lg:h-full pt-3 md:pr-2 xl:pt-6 xl:pr-3 lg:w-1/3  lg:text-base  xl:text-lg perma font-light text-primary leading-snug rounded-3xl italic relative">
             {/* <p>I am A. Akhmadjonov. </p> */}
