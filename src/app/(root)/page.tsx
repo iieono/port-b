@@ -189,7 +189,7 @@ export default function Home() {
       leadtl.to(".lead-cursor-container", {
         y: 0,
         x: 0,
-        duration: 1.5,
+        duration: 2,
         ease: "power2.inOut",
       });
       leadtl.fromTo(
@@ -217,6 +217,15 @@ export default function Home() {
         y: 40,
         duration: 1,
       });
+      leadtl.to(
+        ".lead-explore",
+        {
+          opacity: 1,
+          duration: 1,
+          ease: "power2.inOut",
+        },
+        "-=3.2"
+      );
       leadtl.fromTo(
         ".lead-container",
         {
@@ -315,7 +324,7 @@ export default function Home() {
       </div>
 
       <div className=" hidden lg:flex lead-container p-2 left-1/2 group rounded-tr-full rounded-bl-full lg:rounded-full -translate-x-1/2 absolute bottom-52 flex-col lg:flex-row lg:bottom-5 gap-0 lg:hover:gap-1 transition-all duration-300 delay-1000 hover:delay-500 items-center uppercase justify-center text-2xl">
-        <div className="lead-border  left-0 top-0 rounded-tr-full rounded-bl-full lg:rounded-full -z-10 lg:z-40 absolute w-full h-full shadow-2xl border-2  border-red-600">
+        <div className="lead-border  left-0 top-0 rounded-tr-full rounded-bl-full lg:rounded-full -z-10 lg:z-40 absolute w-full h-full">
           <div className="lead-cursor-container text-primary z-40 absolute right-0 bottom-0">
             <PiCursorLight className="light-cursor-lead h-5 w-5 lg:h-8 lg:w-8 text-custom-red absolute" />
             <PiCursorClick className="click-cursor-lead opacity-0 h-5 w-5 lg:h-8 lg:w-8 absolute text-custom-red" />

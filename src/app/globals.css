@@ -87,7 +87,7 @@
 .hero-title span {
   @apply inline-block origin-bottom-left
 }
-.lead-explore{
+/* .lead-explore{
   animation: exploreUp 2s ease-out 5s forwards;
 }
 @keyframes exploreUp{
@@ -97,8 +97,4 @@
   100%{
     opacity:1
   }
-}
-.lead-container{
-  box-shadow:
-      
-}
+} */
