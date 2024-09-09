@@ -250,7 +250,7 @@ export default function Home() {
     }
   });
   return (
-    <div className=" h-full w-full flex items-center lg:items-start justify-start gap-3 lg:justify-between  flex-col p-2 py-5  lg:p-5 pt-24">
+    <div className=" h-full w-full flex items-center lg:items-start justify-start gap-3 lg:justify-between  flex-col p-2 py-5  lg:p-5 pt-20">
       <div className="hero-name text-2xl  w-32 overflow-hidden text-primary absolute  lg:text-4xl lg:pl-5 lg:top-12 lg:left-12 xl:left-16 top-6 left-8 md:left-9 pen-text">
         '//e0
       </div>
