@@ -88,7 +88,8 @@ export default function RootGroupLayout({
           } transition-all duration-1000 relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-black `}
         >
           <div
-            className={`w-full active h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden rounded-3xl  lg:rounded-tr-none lg:rounded-bl-[65px]  lg:rounded-[100px]`}
+            className={`${navOpen && ""}
+            w-full active h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden rounded-3xl  lg:rounded-tr-none lg:rounded-bl-[65px]  lg:rounded-[100px]`}
           >
             {children}
           </div>

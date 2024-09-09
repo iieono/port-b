@@ -2,6 +2,8 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
+import { PiCursorLight } from "react-icons/pi";
+import { PiCursorClick } from "react-icons/pi";
 
 export default function Home() {
   useGSAP(() => {
@@ -16,15 +18,74 @@ export default function Home() {
         stagger: 0.05,
         ease: "power1.out",
       });
+      gsap.from(".hero-title > div", {
+        y: 60,
+        x: -10,
+        opacity: 0,
+        border: "0px",
+        delay: 0.5,
+        filter: "blur(10px)",
+        color: "white",
+        duration: 1.3,
+        stagger: 0.3,
+        ease: "power1.out",
+      });
+      gsap.from(".hero-title > div", {
+        delay: 2,
+        background: "transparent",
+        duration: 1,
+        ease: "power1.out",
+      });
+      gsap.from(".hero-title > div div:not(.cursor-container)", {
+        y: 10,
+        x: -10,
+        opacity: 0,
+        delay: 2,
+        filter: "blur(10px)",
+        color: "white",
+        duration: 1,
+        stagger: 0.2,
+        ease: "power1.out",
+      });
     } else {
       gsap.from(".hero-title", {
         y: 10,
         x: -5,
+
         opacity: 0,
         filter: "blur(10px)",
         color: "white",
         duration: 1,
         stagger: 0.3,
+        ease: "power1.out",
+      });
+      gsap.from(".hero-title > div", {
+        y: 10,
+        x: -5,
+        opacity: 0,
+        border: "0px",
+        delay: 0.5,
+        filter: "blur(10px)",
+        color: "white",
+        duration: 1,
+        stagger: 0.3,
+        ease: "power1.out",
+      });
+      gsap.from(".hero-title > div", {
+        delay: 2,
+        background: "transparent",
+        duration: 1,
+        ease: "power1.out",
+      });
+      gsap.from(".hero-title > div div", {
+        y: 10,
+        x: -5,
+        opacity: 0,
+        delay: 2,
+        filter: "blur(10px)",
+        color: "white",
+        duration: 1,
+        stagger: 0.15,
         ease: "power1.out",
       });
     }
@@ -56,6 +117,128 @@ export default function Home() {
       duration: 2.6,
       ease: "power1.out",
     });
+
+    const cursortl = gsap.timeline({ repeat: -1, yoyo: true });
+    gsap.to(".click-cursor", {
+      opacity: 0,
+      duration: 0,
+      ease: "power2.inOut",
+    });
+    gsap.fromTo(
+      ".cursor-container",
+      {
+        x: -40,
+        y: 100,
+      },
+      {
+        x: 20,
+        y: 15,
+        opacity: 1,
+        duration: 2,
+        ease: "power1.inOut",
+      }
+    );
+    cursortl.fromTo(
+      ".cursor-container",
+      {
+        x: 20,
+        y: 15,
+        rotation: -5,
+        opacity: 0.8,
+      },
+      {
+        x: 0,
+        y: 40,
+        delay: 2,
+        rotation: 5,
+        opacity: 1,
+        duration: 2.5,
+        ease: "power1.inOut", // Smooth easing effect
+        repeat: 1, // Infinite loop
+        yoyo: true, // Reverses on repeat
+      }
+    );
+    cursortl.to(".cursor-container", {
+      x: 0,
+      y: 0,
+      duration: 2,
+      ease: "power2.inOut",
+    });
+    cursortl.to(".click-cursor", {
+      opacity: 1,
+      duration: 0,
+      ease: "power2.inOut",
+    });
+
+    cursortl.to(".and-sign", {
+      rotate: "5deg",
+      duration: 2,
+      ease: "power2.inOut",
+    });
+    cursortl.to(".and-sign", {
+      rotate: "-5deg",
+      duration: 1,
+      ease: "power2.inOut",
+    });
+    const leadtl = gsap.timeline();
+    gsap.set(".lead-cursor-container", {
+      y: 100,
+      x: -40,
+    });
+    if (window.innerWidth > 1024) {
+      leadtl.to(".lead-cursor-container", {
+        y: 0,
+        x: 0,
+        duration: 1.5,
+        ease: "power2.inOut",
+      });
+      leadtl.fromTo(
+        ".lead-border",
+        {
+          width: 0,
+          height: 0,
+          border: "0px",
+          background: "#ffffe3",
+          borderRadius: "0",
+        },
+        {
+          width: "100%",
+          background: "transparent",
+          height: "100%",
+          border: "2px solid #da392a",
+          duration: 1.3,
+          delay: 1,
+          ease: "power2.inOut",
+          borderRadius: "9999px",
+        }
+      );
+      leadtl.to(".lead-cursor-container", {
+        x: 40,
+        y: 40,
+        duration: 1,
+      });
+      leadtl.fromTo(
+        ".lead-container",
+        {
+          boxShadow:
+            "0 0 5px transparent, 0 0 25px transparent, 0 0 10px transparent, 0 0 200px #transparent",
+        },
+        {
+          boxShadow:
+            "0 0 5px #da392a, 0 0 25px #da392a, 0 0 10px #da392a, 0 0 200px #da392a",
+          duration: 2.5,
+        },
+        "-=4"
+      );
+      leadtl.to(
+        ".lead-container",
+        {
+          overflow: "hidden",
+          duration: 0,
+        },
+        "-=0.5"
+      );
+    }
   });
   return (
     <div className=" h-full w-full flex items-center lg:items-start justify-start gap-3 lg:justify-between  flex-col p-2 py-5  lg:p-5 pt-20">
@@ -74,13 +257,17 @@ export default function Home() {
             <span>n</span>
             <span>e</span>
             <span>r</span>
-            <div className="text-primary font-medium relative">
-              <div className="absolute border border-primary w-full h-full">
-                <div className="absolute w-5 h-5  border-t border-r -right-5 -top-5"></div>
-                <div className="absolute w-3 h-3 rounded-full bg-primary -left-1.5 -top-1.5"></div>
-                <div className="absolute w-3 h-3 rounded-full bg-primary -right-1.5 -top-1.5"></div>
-                <div className="absolute w-3 h-3 rounded-full bg-primary -left-1.5 -bottom-1.5"></div>
-                <div className="absolute w-3 h-3 rounded-full bg-primary -right-1.5 -bottom-1.5"></div>
+            <div className="and-sign text-primary font-medium relative bg-primary/10">
+              <div className="cursor-container text-primary z-40 absolute right-0 top-0">
+                <PiCursorLight className="light-cursor h-5 w-5 lg:h-8 lg:w-8 text-custom-red absolute" />
+                <PiCursorClick className="click-cursor h-5 w-5 lg:h-8 lg:w-8 absolute text-custom-red" />
+              </div>
+              <div className="absolute border border-custom-red w-full h-full">
+                <div className="absolute w-3 lg:w-8 h-3 lg:h-8  border-t border-r rounded-tr-3xl border-custom-red -right-3 lg:-right-8 -top-3 lg:-top-8"></div>
+                <div className="absolute w-1 lg:w-3 h-1 lg:h-3 rounded-full bg-primary -left-[2px] -top-[2px] lg:-left-1.5 lg:-top-1.5"></div>
+                <div className="absolute w-1 lg:w-3 h-1 lg:h-3 rounded-full bg-primary -right-[2px] -top-[2px] lg:-right-1.5 lg:-top-1.5"></div>
+                <div className="absolute w-1 lg:w-3 h-1 lg:h-3 rounded-full bg-primary -left-[2px] -bottom-[2px] lg:-left-1.5 lg:-bottom-1.5"></div>
+                <div className="absolute w-1 lg:w-3 h-1 lg:h-3 rounded-full bg-primary -right-[2px] -bottom-[2px] lg:-right-1.5 lg:-bottom-1.5"></div>
               </div>
               &
             </div>
@@ -127,19 +314,24 @@ export default function Home() {
         </div>
       </div>
 
-      {/* <div className="w-full gap-3 py-2 hidden lg:flex flex-col items-center lg:items-start tracking-widest  text-lg lg:text-2xl xl:text-4xl px-5 lg:px-3 text-primary  jura font-extralight justify-start">
-        <div className="flex lg:self-end shadow-2xl  gap-3 w-72 lg:w-auto flex-col lg:flex-row text-lg lg:text-4xl items-start lg:items-center p-2 lg:px-2 lg:py-2 rounded-xl transition-all duration-700 rounded-bl-[100px] rounded-tr-[100px] lg:rounded-xl lg:rounded-br-[100px] lg:rounded-tl-[100px] uppercase bg-primary ">
-          <div className=" self-end hover:shadow-2xl lg:mb-10 sharpie-text transition-all duration-700 rounded-full bg-custom-deepgray/100 backdrop-blur-lg px-4 py-2">
-            See my works
-          </div>
-          <div className=" text-5xl sharpie-text self-center text-custom-deepgray">
-            &
-          </div>
-          <div className=" rounded-full kalam-text hover:shadow-2xl transition-all duration-700 bg-custom-deepgray/100 backdrop-blur-lg lg:mt-10 px-4 py-2">
-            Reach out
+      <div className=" hidden lg:flex lead-container p-2 left-1/2 group rounded-tr-full rounded-bl-full lg:rounded-full -translate-x-1/2 absolute bottom-52 flex-col lg:flex-row lg:bottom-5 gap-0 lg:hover:gap-1 transition-all duration-300 delay-1000 hover:delay-500 items-center uppercase justify-center text-2xl">
+        <div className="lead-border  left-0 top-0 rounded-tr-full rounded-bl-full lg:rounded-full -z-10 lg:z-40 absolute w-full h-full shadow-2xl border-2  border-red-600">
+          <div className="lead-cursor-container text-primary z-40 absolute right-0 bottom-0">
+            <PiCursorLight className="light-cursor-lead h-5 w-5 lg:h-8 lg:w-8 text-custom-red absolute" />
+            <PiCursorClick className="click-cursor-lead opacity-0 h-5 w-5 lg:h-8 lg:w-8 absolute text-custom-red" />
           </div>
         </div>
-      </div> */}
+        <div className="overflow-hidden transition-all group-hover:delay-0 lg:delay-500 duration-700 chillax-text opacity-0 group-hover:opacity-100 max-w-0 group-hover:max-w-80 bg-primary p-0 group-hover:px-6 group-hover:py-2  rounded-full font-medium text-custom-red">
+          Gallery
+        </div>
+
+        <div className="lead-explore overflow-hidden transition-all duration-700 opacity-0 delay-500 lg:delay-[1200ms] group-hover:delay-0 chillax-text origin-center text-center group-hover:text-primary group-hover:max-w-0 group-hover:translate-y-[150%] group-hover:p-0 max-w-80 bg-primary px-6 py-2 rounded-full font-medium text-custom-red">
+          Explore
+        </div>
+        <div className="overflow-hidden transition-all group-hover:delay-0 lg:delay-500 duration-700 chillax-text opacity-0 group-hover:opacity-100 max-w-0 group-hover:max-w-80 bg-primary p-0 group-hover:px-6 group-hover:py-2 rounded-full font-medium text-custom-red">
+          Projects
+        </div>
+      </div>
 
       <div className="flex self-end lg:hidden w-full italic  items-end uppercase justify-center ">
         <Link
