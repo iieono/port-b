@@ -182,7 +182,7 @@ export default function Home() {
     });
     const leadtl = gsap.timeline();
     gsap.set(".lead-cursor-container", {
-      y: 100,
+      y: 200,
       x: -40,
     });
     if (window.innerWidth > 1024) {
@@ -353,10 +353,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="flex self-end lg:hidden w-full italic  items-end uppercase justify-center ">
+      <div className="flex  self-end lg:hidden w-full italic px-1  items-end uppercase justify-center ">
         <Link
           href="/gallery"
-          className="absolute w-auto bg-primary backdrop-blur-lg shadow-2xl text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-[20px] justify-between lg:rounded-none lg:rounded-tl-[50px]"
+          className=" w-full bg-primary/1 text-primary shadow-custom-deepgray/60 backdrop-blur-3xl shadow-2xl text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-[20px] justify-between lg:rounded-none lg:rounded-tl-[50px]"
         >
           <div className=" hidden lg:flex w-8 h-1/3 absolute left-0 -translate-x-full bg-primary bottom-0">
             <div className="w-full h-full bg-custom-red rounded-br-[30px]"></div>

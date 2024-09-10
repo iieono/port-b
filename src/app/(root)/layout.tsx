@@ -41,7 +41,7 @@ export default function RootGroupLayout({
   const [funText, setFunText] = useState<string>("");
   // fun texts
   const attributes: Record<string, string> = {
-    "/": "Figuratively.",
+    "/home": "Figuratively.",
     "/about":
       "The page where I make myself sound way cooler than I actually am.",
     "/gallery": "My digital show-off gallery.",
@@ -56,6 +56,19 @@ export default function RootGroupLayout({
     // }
   }, [pathname]);
   useLayoutEffect(() => {
+    gsap.fromTo(
+      ".menu-pathname",
+      {
+        y: 40,
+        x: -40,
+      },
+      {
+        y: 0,
+        x: 0,
+        duration: 1,
+        ease: "power2.out",
+      }
+    );
     gsap.fromTo(
       funTextRef.current,
       {
@@ -77,26 +90,26 @@ export default function RootGroupLayout({
     >
       <div
         ref={mainContainerRef}
-        className={`h-screen main-container flex p-1 flex-col bg-primary rounded-none ${
-          navOpen && "lg:rounded-bl-none delay-0"
-        }  lg:rounded-br-none lg:rounded-bl-none lg:rounded-tr-none  lg:rounded-[100px] transition-all duration-700 delay-700  `}
+        className={`h-screen main-container flex flex-col bg-primary rounded-none ${
+          navOpen && " delay-0"
+        }   transition-all duration-700 delay-700  `}
       >
         <div
           className={`${
             navOpen
               ? "h-full lg:h-[calc(100%-7rem)] "
               : "h-full delay-700 lg:delay-500 duration-1000"
-          } inner-container transition-all duration-1000 relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-black `}
+          } inner-container transition-all duration-1000 relative  bg-black `}
         >
           <div
             className={`${navOpen && ""}
-            child-container w-full active h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden rounded-3xl  lg:rounded-tr-none lg:rounded-bl-[65px]  lg:rounded-[100px]`}
+            child-container w-full active h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden `}
           >
             {children}
           </div>
           <div
             ref={hamRef}
-            className="hamburger-container absolute overflow-hidden flex items-center  justify-center w-20 z-20 rounded-br-none rounded-tl-none h-14 lg:bg-custom-gray top-3 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-[40px] lg:border-4 lg:border-b-[1px] lg:border-l-[1px]  border-primary"
+            className="hamburger-container absolute overflow-hidden flex items-center  justify-center lg:justify-start w-20 lg:w-44 z-20 rounded-br-none rounded-bl-none rounded-tl-none h-14 lg:h-auto  top-3 lg:bottom-9 lg:top-auto cursor-pointer right-0 lg:left-20 lg:pl-1 "
             onClick={() => setNavOpen((prev) => !prev)}
           >
             <div
@@ -114,10 +127,15 @@ export default function RootGroupLayout({
                 }  rounded-full transition-all duration-700  lg:bg-primary`}
               ></div>
             </div>
-            <div className="nav-open-2 transition-all duration-700 delay-300 flex items-center flex-col absolute -translate-x-16  translate-y-16  rotate-45  z-40 w-full h-full rounded-full justify-center">
+            <div className="nav-open-2 transition-all duration-700 delay-300 flex items-center flex-col absolute -translate-x-16  translate-y-16  rotate-45  z-40  rounded-full justify-center">
               <div className="w-5 h-1.5 bg-primary rounded-full rotate-[45deg] translate-x-3 "></div>
               <div className="w-8 h-1.5 bg-primary rounded-full"></div>
               <div className="w-5 h-1.5 bg-primary rounded-full -rotate-[45deg] translate-x-3"></div>
+            </div>
+            <div className="hidden lg:flex pl-12 h-min text-primary array-text uppercase text-2xl overflow-hidden">
+              <span className="menu-pathname inline-block">
+                {pathname.slice(1)}
+              </span>
             </div>
           </div>
         </div>
