@@ -4,7 +4,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function RootGroupLayout({
   children,
@@ -12,8 +12,9 @@ export default function RootGroupLayout({
   children: React.ReactNode;
 }) {
   useGSAP(() => {
+    const layouttl = gsap.timeline();
     if (window.innerWidth > 1024) {
-      gsap.from(hamRef.current, {
+      layouttl.from(hamRef.current, {
         duration: 2,
         y: 100,
         x: -100,
@@ -21,7 +22,7 @@ export default function RootGroupLayout({
         ease: "power2.out",
       });
     } else {
-      gsap.from(hamRef.current, {
+      layouttl.from(hamRef.current, {
         duration: 3,
         // y: 40,
         opacity: 0,
@@ -76,7 +77,7 @@ export default function RootGroupLayout({
     >
       <div
         ref={mainContainerRef}
-        className={`h-screen main-container flex flex-col  p-1 bg-primary rounded-none ${
+        className={`h-screen main-container flex p-1 flex-col bg-primary rounded-none ${
           navOpen && "lg:rounded-bl-none delay-0"
         }  lg:rounded-br-none lg:rounded-bl-none lg:rounded-tr-none  lg:rounded-[100px] transition-all duration-700 delay-700  `}
       >
@@ -85,17 +86,17 @@ export default function RootGroupLayout({
             navOpen
               ? "h-full lg:h-[calc(100%-7rem)] "
               : "h-full delay-700 lg:delay-500 duration-1000"
-          } transition-all duration-1000 relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-black `}
+          } inner-container transition-all duration-1000 relative rounded-3xl lg:rounded-tr-none  lg:rounded-bl-[65px] lg:rounded-[100px] bg-black `}
         >
           <div
             className={`${navOpen && ""}
-            w-full active h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden rounded-3xl  lg:rounded-tr-none lg:rounded-bl-[65px]  lg:rounded-[100px]`}
+            child-container w-full active h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden rounded-3xl  lg:rounded-tr-none lg:rounded-bl-[65px]  lg:rounded-[100px]`}
           >
             {children}
           </div>
           <div
             ref={hamRef}
-            className="absolute overflow-hidden flex items-center  justify-center w-20 z-20 rounded-br-none rounded-tl-none h-14 lg:bg-custom-gray top-3 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-[40px] lg:border-4 lg:border-b-[1px] lg:border-l-[1px]  border-primary"
+            className="hamburger-container absolute overflow-hidden flex items-center  justify-center w-20 z-20 rounded-br-none rounded-tl-none h-14 lg:bg-custom-gray top-3 lg:bottom-0 lg:top-auto cursor-pointer right-0 lg:left-0 rounded-[40px] lg:border-4 lg:border-b-[1px] lg:border-l-[1px]  border-primary"
             onClick={() => setNavOpen((prev) => !prev)}
           >
             <div
@@ -134,11 +135,11 @@ export default function RootGroupLayout({
             {funText}
           </div>
           <div className="h-full w-full flex flex-col lg:flex-row  items-center justify-center gap-10 lg:gap-0 lg:justify-between px-20 text-5xl lg:text-5xl uppercase array-text pb-0 font-light">
-            <Link href="/" passHref>
+            <Link href="/home" passHref>
               <div
                 data-attr="Figuratively."
                 className={`nav-item px-4 py-2 rounded-full ${
-                  pathname === "/" ? "active" : ""
+                  pathname === "/home" ? "active" : ""
                 }`}
               >
                 Home
