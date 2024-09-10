@@ -80,8 +80,8 @@ export default function Home() {
   }, [percent, router]);
   return (
     <div className=" h-full w-full flex items-center justify-center">
-      <div className="fixed bg-black  w-full h-full  z-50 flex items-end justify-end text-custom-red boxing-text text-5xl lg:text-[10rem] active">
-        <div className="w-full h-full flex items-end p-5 lg:p-20 justify-end grainy-bg active">
+      <div className="percent-container fixed bg-black  w-full h-full  z-50 flex items-end justify-end text-custom-red boxing-text text-5xl lg:text-[10rem] active">
+        <div className=" w-full h-full flex items-end p-5 lg:p-20 justify-end grainy-bg active">
           {percent}%
         </div>
       </div>

@@ -98,3 +98,6 @@
     opacity:1
   }
 } */
+ .mob-galler-container , .percent-container{
+  padding-bottom: env(safe-area-inset-bottom, 1.25rem);
+ }
