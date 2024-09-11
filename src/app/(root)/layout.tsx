@@ -85,7 +85,7 @@ export default function RootGroupLayout({
   }, [pathname]);
   return (
     <main
-      className="min-h-screen antialiased bg-custom-red grainy-bg overflow-hidden"
+      className=" antialiased bg-custom-red grainy-bg overflow-hidden"
       style={{ perspective: "1000px" }}
     >
       <div

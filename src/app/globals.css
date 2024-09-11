@@ -98,7 +98,10 @@
     opacity:1
   }
 } */
-.mob-explore-container,
-.percent-container {
-  padding-bottom: calc(env(safe-area-inset-bottom, 1.25rem) * 2000);
+.mob-explore-container {
+  padding-bottom: env(safe-area-inset-bottom, 2rem);
+}
+main{
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 }
