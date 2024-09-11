@@ -79,10 +79,10 @@
 
 }
 .gallery-item{
-  @apply backdrop-blur-lg rounded-3xl min-h-96 relative
+  @apply backdrop-blur-lg rounded-3xl min-h-96 relative col-span-1
 }
 .gallery-item.large{
-  @apply col-span-2
+  @apply lg:col-span-2
 }
 .hero-title span {
   @apply inline-block origin-bottom-left

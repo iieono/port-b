@@ -28,7 +28,7 @@ function GalleryItem({ size = "small" }) {
   return (
     <div
       className={`gallery-item ${
-        size == "large" && "large"
+        size == "large" ? "large" : ""
       } relative flex items-center justify-center bg-custom-deepgray/20 text-custom-primary `}
     >
       gallery hellooooooooooooooooooooooooo
