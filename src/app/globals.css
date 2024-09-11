@@ -100,5 +100,5 @@
 } */
 .mob-explore-container,
 .percent-container {
-  padding-bottom: calc(env(safe-area-inset-bottom, 1.25rem) * 10);
+  padding-bottom: calc(env(safe-area-inset-bottom, 1.25rem) * 200);
 }
