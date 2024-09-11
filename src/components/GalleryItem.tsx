@@ -10,7 +10,7 @@ function GalleryItem({ size = "small" }) {
     galleritemtl.fromTo(
       ".gallery-item",
       {
-        y: 100,
+        y: 80,
         opacity: 0,
         x: -10,
       },
@@ -24,18 +24,6 @@ function GalleryItem({ size = "small" }) {
         stagger: 0.3,
       }
     );
-    galleritemtl.to(".gallery-click-cursor", {
-      opacity: 0,
-      duration: 0,
-    });
-    galleritemtl.to(".gallery-cursor-container", {
-      x: () => 200,
-      y: () => 40,
-      delay: 0.5,
-      stagger: 0.2,
-      opacity: 0,
-      duration: 1.3,
-    });
   });
   return (
     <div
@@ -43,10 +31,6 @@ function GalleryItem({ size = "small" }) {
         size == "large" && "large"
       } relative flex items-center justify-center bg-custom-deepgray/20 text-custom-primary `}
     >
-      <div className="gallery-cursor-container text-custom-red z-50 absolute right-20 bottom-20 bg-black">
-        <PiCursorLight className="gallery-light-cursor h-5 w-5 lg:h-8 lg:w-8 text-custom-red absolute" />
-        <PiCursorClick className="gallery-click-cursor h-5 w-5 lg:h-8 lg:w-8 absolute text-custom-red" />
-      </div>
       gallery hellooooooooooooooooooooooooo
     </div>
   );
