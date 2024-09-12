@@ -1,23 +1,19 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { PiCursorLight } from "react-icons/pi";
-import { PiCursorClick } from "react-icons/pi";
 
 export default function Home() {
   const pathname = usePathname();
   const [percent, setPercent] = useState(0);
   const router = useRouter();
-  // percent
+
   useEffect(() => {
-    const minIncrement = 6;
-    const maxIncrement = 15;
+    const minIncrement = 15;
+    const maxIncrement = 20;
     const maxPercent = 100;
     let currentValue = 0;
-
     const increment = () => {
       const randomIncrement =
         Math.floor(Math.random() * (maxIncrement - minIncrement + 1)) +
@@ -31,32 +27,27 @@ export default function Home() {
       gsap.to(
         {},
         {
-          duration: 0.3, // Duration of each increment
+          duration: 0.7,
           onComplete: increment,
         }
       );
     };
-
     increment();
-
     return () => {
-      gsap.killTweensOf({}); // Cleanup gsap animations on unmount
+      gsap.killTweensOf({});
     };
   }, []);
 
   useEffect(() => {
     if (percent === 100) {
-      // Animate the hiding of the .welcome-container
       gsap.to(".welcome-container", {
         visibility: "hidden",
         duration: 0,
         delay: 1,
         onComplete: () => {
-          // Navigate to /home after hiding the .welcome-container
           router.push("/home");
         },
       });
-      const layouttl = gsap.timeline();
       if (pathname == "/home") {
         if (window.innerWidth > 1024) {
           gsap.from(".hamburger-container", {
@@ -69,7 +60,6 @@ export default function Home() {
         } else {
           gsap.from(".hamburger-container", {
             duration: 3,
-            // y: 40,
             opacity: 0,
             filter: "blur(10px)",
             ease: "power2.out",
@@ -77,12 +67,42 @@ export default function Home() {
         }
       }
     }
-  }, [percent, router]);
+  }, [percent, router, pathname]);
+
+  const separateDigits = (number) => {
+    return number.toString().split("");
+  };
+
   return (
-    <div className=" h-full w-full flex items-center justify-center">
-      <div className="percent-container fixed bg-black  w-full h-full  z-50 flex items-end justify-end text-custom-red boxing-text text-5xl lg:text-[10rem] active">
-        <div className=" w-full h-full flex items-center lg:items-end p-5 lg:p-20 justify-center lg:justify-end grainy-bg active">
-          {percent}%
+    <div className="h-full w-full flex items-center justify-center">
+      <div className="percent-container fixed bg-black w-full h-full z-50 flex items-end justify-end text-custom-red chillax-text text-3xl lg:text-[10rem] active">
+        <div className="w-full h-full flex items-center lg:items-end p-5 lg:p-20 justify-center lg:justify-end grainy-bg active">
+          {separateDigits(percent).map((digit, index) => (
+            <div
+              key={index}
+              className="relative w-[0.8em]  h-[1em] overflow-hidden"
+            >
+              <div
+                className="absolute top-0 left-0 flex flex-col transition-transform duration-500"
+                style={{
+                  transform: `translateY(calc(-${parseInt(
+                    digit
+                  )} * 100% / 10))`,
+                }}
+              >
+                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+                  <span
+                    key={num}
+                    className={`flex justify-center items-center transition-all duration-1000 h-[1em] w-[1em] ${
+                      num.toString() !== digit ? "blur-[10px] scale-50" : ""
+                    }`}
+                  >
+                    {num}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

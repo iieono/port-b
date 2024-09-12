@@ -306,8 +306,8 @@ export default function Home() {
             <span>r</span>
             <div className="and-sign text-primary font-medium relative bg-primary/10">
               <div className="cursor-container text-primary z-40 absolute right-0 top-0">
-                <PiCursorLight className="light-cursor h-5 w-5 lg:h-8 lg:w-8 text-custom-red absolute" />
-                <PiCursorClick className="click-cursor h-5 w-5 lg:h-8 lg:w-8 absolute text-custom-red" />
+                <PiCursorLight className="light-cursor h-6 w-6 lg:h-8 lg:w-8 text-custom-red absolute" />
+                <PiCursorClick className="click-cursor h-6 w-6 lg:h-8 lg:w-8 absolute text-custom-red" />
               </div>
               <div className="absolute border border-custom-red w-full h-full">
                 <div className="absolute w-3 lg:w-8 h-3 lg:h-8  border-t border-r rounded-tr-3xl border-custom-red -right-3 lg:-right-8 -top-3 lg:-top-8"></div>
