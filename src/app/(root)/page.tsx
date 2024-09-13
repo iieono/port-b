@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 export default function Home() {
   const pathname = usePathname();
-  const [percent, setPercent] = useState(0);
+  const [percent, setPercent] = useState<number>(0);
   const router = useRouter();
 
   useEffect(() => {
@@ -14,6 +14,7 @@ export default function Home() {
     const maxIncrement = 20;
     const maxPercent = 100;
     let currentValue = 0;
+
     const increment = () => {
       const randomIncrement =
         Math.floor(Math.random() * (maxIncrement - minIncrement + 1)) +
@@ -32,7 +33,9 @@ export default function Home() {
         }
       );
     };
+
     increment();
+
     return () => {
       gsap.killTweensOf({});
     };
@@ -48,7 +51,8 @@ export default function Home() {
           router.push("/home");
         },
       });
-      if (pathname == "/home") {
+
+      if (pathname === "/home") {
         if (window.innerWidth > 1024) {
           gsap.from(".hamburger-container", {
             duration: 2,
@@ -69,7 +73,7 @@ export default function Home() {
     }
   }, [percent, router, pathname]);
 
-  const separateDigits = (number) => {
+  const separateDigits = (number: number): string[] => {
     return number.toString().split("");
   };
 
