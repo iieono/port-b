@@ -4,9 +4,14 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React, { useRef, useEffect, useState } from "react";
 
-function GalleryItem({ size = "small", index }) {
-  const itemRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+type GalleryItemProps = {
+  size?: "small" | "medium" | "large"; // Define as per your use case
+  index: number; // Define index as number
+};
+
+function GalleryItem({ size = "small", index }: GalleryItemProps) {
+  const itemRef = useRef<HTMLDivElement | null>(null);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
