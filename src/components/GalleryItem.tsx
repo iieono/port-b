@@ -5,7 +5,7 @@ import gsap from "gsap";
 import React, { useRef, useEffect, useState } from "react";
 
 type GalleryItemProps = {
-  size?: "small" | "medium" | "large"; // Define as per your use case
+  size?: string; // Define as per your use case
   index: number; // Define index as number
 };
 
