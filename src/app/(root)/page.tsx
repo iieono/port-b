@@ -79,7 +79,7 @@ export default function Home() {
 
   return (
     <div className="h-full w-full flex items-center justify-center">
-      <div className="percent-container fixed bg-black w-full h-full z-50 flex items-end justify-end text-custom-red chillax-text text-3xl lg:text-[10rem] active">
+      <div className="percent-container fixed bg-black w-full h-full z-50 flex items-end justify-end text-custom-red chillax-text text-4xl lg:text-[10rem] active">
         <div className="w-full h-full flex items-center lg:items-end p-5 lg:p-20 justify-center lg:justify-end grainy-bg active">
           {separateDigits(percent).map((digit, index) => (
             <div
