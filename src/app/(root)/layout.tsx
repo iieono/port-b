@@ -85,25 +85,25 @@ export default function RootGroupLayout({
   }, [pathname]);
   return (
     <main
-      className=" antialiased bg-custom-red grainy-bg overflow-hidden"
+      className=" antialiased bg-black grainy-bg overflow-hidden"
       style={{ perspective: "1000px" }}
     >
       <div
         ref={mainContainerRef}
-        className={`h-screen main-container flex flex-col bg-primary rounded-none ${
+        className={`h-screen main-container flex flex-col bg-black rounded-none ${
           navOpen && " delay-0"
         }   transition-all duration-700 delay-700  `}
       >
         <div
           className={`${
             navOpen
-              ? "h-full lg:h-[calc(100%-7rem)] "
+              ? "h-full lg:h-[calc(100%-7rem)] lg:rounded-b-[100px]"
               : "h-full delay-700 lg:delay-500 duration-1000"
-          } inner-container transition-all duration-1000 relative  bg-black `}
+          } inner-container transition-all duration-1000 relative  bg-white `}
         >
           <div
-            className={`${navOpen && ""}
-            child-container w-full active h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden `}
+            className={`${navOpen && "lg:rounded-b-[100px]"}
+            child-container w-full  h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden `}
           >
             {children}
           </div>
@@ -118,13 +118,17 @@ export default function RootGroupLayout({
             >
               <div
                 className={`${
-                  navOpen ? "w-5 h-1 bg-custom-red" : "w-8 h-2 bg-primary"
-                }  rounded-full transition-all duration-700 lg:bg-primary`}
+                  navOpen
+                    ? "w-5 h-1 bg-custom-red lg:bg-custom-deepgray"
+                    : "w-8 h-2 bg-custom-deepgray lg:bg-custom-deepgray lg:delay-500"
+                }  rounded-full transition-all duration-700 `}
               ></div>
               <div
                 className={`${
-                  navOpen ? "w-8 h-2 bg-custom-red" : "w-5 h-1 bg-primary"
-                }  rounded-full transition-all duration-700  lg:bg-primary`}
+                  navOpen
+                    ? "w-8 h-2 bg-custom-red lg:bg-custom-deepgray"
+                    : "w-5 h-1 bg-custom-deepgray lg:bg-custom-deepgray lg:delay-500"
+                }  rounded-full transition-all duration-700  `}
               ></div>
             </div>
             <div className="nav-open-2 transition-all duration-700 delay-300 flex items-center flex-col absolute -translate-x-16  translate-y-16  rotate-45  z-40  rounded-full justify-center">
@@ -132,7 +136,7 @@ export default function RootGroupLayout({
               <div className="w-8 h-1.5 bg-primary rounded-full"></div>
               <div className="w-5 h-1.5 bg-primary rounded-full -rotate-[45deg] translate-x-3"></div>
             </div>
-            <div className="hidden lg:flex pl-12 h-min text-primary array-text uppercase text-2xl overflow-hidden">
+            <div className="hidden lg:flex pl-12 h-min text-custom-deepgray chillax-text font-semibold uppercase text-2xl overflow-hidden">
               <span className="menu-pathname inline-block">
                 {pathname.slice(1)}
               </span>
@@ -144,7 +148,7 @@ export default function RootGroupLayout({
             navOpen
               ? "h-full lg:h-28 rounded-t-none duration-700"
               : "h-0 rounded-t-full  lg:delay-500 duration-1000"
-          } overflow-hidden flex justify-between  transition-all bg-primary lg:rounded-t-none lg:bg-transparent gap-5 left-0 bottom-0 absolute lg:relative `}
+          } overflow-hidden flex justify-between  transition-all bg-black lg:rounded-t-none lg:bg-black text-white lg:text-white gap-5 left-0 bottom-0 absolute lg:relative `}
         >
           <div
             ref={funTextRef}

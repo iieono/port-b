@@ -10,6 +10,10 @@
 *::-webkit-scrollbar {
   display: none;
 }
+*::selection {
+  color: #da392a;
+  background: #da392a33;
+}
 
 /* Hide scrollbar for IE, Edge and Firefox */
 * {
@@ -28,6 +32,7 @@
 }
 .nav-item.active{
   opacity: 1;
+  color: #da392a;
 }
 
 /* .main-container:has(.nav-item:hover) .nav-open-1{

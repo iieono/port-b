@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+
+import React, { useEffect, useState, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { usePathname, useRouter } from "next/navigation";
@@ -8,6 +9,7 @@ export default function Home() {
   const pathname = usePathname();
   const [percent, setPercent] = useState<number>(0);
   const router = useRouter();
+  const digitRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
     const minIncrement = 15;
@@ -73,33 +75,36 @@ export default function Home() {
     }
   }, [percent, router, pathname]);
 
-  const separateDigits = (number: number): string[] => {
-    return number.toString().split("");
-  };
+  useGSAP(() => {
+    digitRefs.current.forEach((ref, index) => {
+      if (ref) {
+        const digit = percent.toString().padStart(3, "0")[index];
+        gsap.to(ref, {
+          y: `-${parseInt(digit) * 10}%`,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      }
+    });
+  }, [percent]);
 
   return (
     <div className="h-full w-full flex items-center justify-center">
-      <div className="percent-container fixed bg-black w-full h-full z-50 flex items-end justify-end text-custom-red chillax-text text-4xl lg:text-[10rem] active">
-        <div className="w-full h-full flex items-center lg:items-end p-5 lg:p-20 justify-center lg:justify-end grainy-bg active">
-          {separateDigits(percent).map((digit, index) => (
+      <div className="percent-container fixed bg-white w-full h-full z-50 flex items-end justify-end text-custom-red font-bold sharpie-text text-4xl lg:text-[10rem] active">
+        <div className="w-full h-full flex items-center lg:items-end p-5 lg:p-20 justify-center lg:justify-end grainy-bg ">
+          {[0, 1, 2].map((index) => (
             <div
               key={index}
-              className="relative w-[0.8em]  h-[1em] overflow-hidden"
+              className="relative w-[0.6em] h-[1em] overflow-hidden mx-[2px]"
             >
               <div
-                className="absolute top-0 left-0 flex flex-col transition-transform duration-500"
-                style={{
-                  transform: `translateY(calc(-${parseInt(
-                    digit
-                  )} * 100% / 10))`,
-                }}
+                ref={(el) => (digitRefs.current[index] = el)}
+                className="absolute top-0 left-0 flex flex-col"
               >
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
                   <span
                     key={num}
-                    className={`flex justify-center items-center transition-all duration-1000 h-[1em] w-[1em] ${
-                      num.toString() !== digit ? "blur-[10px] scale-50" : ""
-                    }`}
+                    className="flex justify-center items-center h-[1em] w-[0.6em]"
                   >
                     {num}
                   </span>
