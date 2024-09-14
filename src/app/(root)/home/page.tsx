@@ -294,18 +294,17 @@ export default function Home() {
       </div>
       <div className="chillax-text absolute top-9 right-12 pr-3 lg:flex gap-2 hidden text-2xl italic text-custom-deepgray font-medium">
         <div className="group hover:bg-black hover:-rotate-12  rounded-full transition-all duration-300 hover:delay-300 delay-700 ">
-          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:delay-0 delay-500 h-full w-full absolute flex items-center justify-end px-2 text-3xl jetbrains text-white">-></div>
+          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:delay-0 delay-500 h-full w-full absolute flex items-center justify-end px-2 text-3xl jetbrains text-white">{`->`}</div>
           <div className=" transition-all px-3 py-1 bg-white border border-transparent group-hover:delay-300 delay-500 group-hover:border-custom-deepgray/30 duration-300 rounded-full cursor-pointer group-hover:translate-y-8 group-hover:translate-x-1  group-hover:rotate-12 ease-in">
             github
           </div>
         </div>
         <div className="group hover:bg-black hover:-rotate-12  rounded-full transition-all duration-300 hover:delay-300 delay-700 ">
-          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:delay-0 delay-500 h-full w-full absolute flex items-center justify-end px-2 text-3xl jetbrains text-white">-></div>
+          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:delay-0 delay-500 h-full w-full absolute flex items-center justify-end px-2 text-3xl jetbrains text-white">{`->`}</div>
           <div className=" transition-all px-3 py-1 bg-white border border-transparent group-hover:delay-300 delay-500 group-hover:border-custom-deepgray/30 duration-300 rounded-full cursor-pointer group-hover:translate-y-8 group-hover:translate-x-1  group-hover:rotate-12 ease-in">
             email
           </div>
         </div>
-
       </div>
 
       <div className="leading-none chillax-text font-semibold text-black text-[3.15rem] w-full h-full  px-5 lg:px-10 md:text-[6rem] lg:text-[8rem] xl:text-[12rem] 2xl:text-[14rem] flex items-start justify-start lg:justify-center flex-col ">

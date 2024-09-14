@@ -98,7 +98,9 @@ export default function Home() {
               className="relative w-[0.6em] h-[1em] overflow-hidden mx-[2px]"
             >
               <div
-                ref={(el) => (digitRefs.current[index] = el)}
+                ref={(el) => {
+                  digitRefs.current[index] = el;
+                }}
                 className="absolute top-0 left-0 flex flex-col"
               >
                 {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
