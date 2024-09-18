@@ -120,14 +120,14 @@ export default function RootGroupLayout({
                 className={`${
                   navOpen
                     ? "w-5 h-1 bg-custom-red lg:bg-custom-deepgray"
-                    : "w-8 h-2 bg-custom-deepgray lg:bg-white lg:delay-500"
+                    : "w-8 h-2 bg-white lg:bg-white lg:delay-500"
                 }  rounded-full transition-all duration-700 `}
               ></div>
               <div
                 className={`${
                   navOpen
                     ? "w-8 h-2 bg-custom-red lg:bg-white"
-                    : "w-5 h-1 bg-custom-deepgray lg:bg-custom-deepgray lg:delay-500"
+                    : "w-5 h-1 bg-white lg:bg-custom-deepgray lg:delay-500"
                 }  rounded-full transition-all duration-700  `}
               ></div>
             </div>

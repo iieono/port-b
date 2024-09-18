@@ -289,7 +289,7 @@ export default function Home() {
   });
   return (
     <div className=" h-full w-full flex items-center lg:items-start justify-start gap-3 lg:justify-between  flex-col p-2 py-2  lg:p-5 pt-20">
-      <div className="hero-name text-2xl  w-32 overflow-hidden text-primary font-bold absolute  lg:text-4xl lg:pl-5 lg:top-9 lg:left-12 xl:left-16 top-6 left-8 md:left-9 pen-text">
+      <div className="hero-name text-2xl  w-32 overflow-hidden text-custom-red font-bold absolute  lg:text-4xl lg:pl-5 lg:top-9 lg:left-12 xl:left-16 top-6 left-8 md:left-9 pen-text">
         '//e0
       </div>
       <div className="chillax-text absolute top-9 right-12 pr-3 lg:flex gap-2 hidden text-2xl italic text-custom-deepgray font-medium">
@@ -397,7 +397,7 @@ export default function Home() {
       <div className="flex mob-explore-container  self-end lg:hidden w-full italic  items-end uppercase justify-center ">
         <Link
           href="/gallery"
-          className=" w-full bg-custom-red/60 text-white shadow-primary/20 backdrop-blur-sm shadow-2xl text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-2xl justify-between lg:rounded-none lg:rounded-tl-[50px]"
+          className=" w-full bg-custom-deepgray text-white shadow-primary/20 backdrop-blur-sm shadow-2xl text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-2xl justify-between lg:rounded-none lg:rounded-tl-[50px]"
         >
           <div className=" hidden lg:flex w-8 h-1/3 absolute left-0 -translate-x-full bg-primary bottom-0">
             <div className="w-full h-full bg-custom-red rounded-br-[30px]"></div>
