@@ -85,12 +85,12 @@ export default function RootGroupLayout({
   }, [pathname]);
   return (
     <main
-      className=" antialiased bg-black grainy-bg overflow-hidden"
+      className=" antialiased bg-white grainy-bg overflow-hidden"
       style={{ perspective: "1000px" }}
     >
       <div
         ref={mainContainerRef}
-        className={`h-screen main-container flex flex-col bg-black rounded-none ${
+        className={`h-screen main-container flex flex-col bg-white rounded-none ${
           navOpen && " delay-0"
         }   transition-all duration-700 delay-700  `}
       >
@@ -99,7 +99,7 @@ export default function RootGroupLayout({
             navOpen
               ? "h-full lg:h-[calc(100%-7rem)] lg:rounded-b-[100px]"
               : "h-full delay-700 lg:delay-500 duration-1000"
-          } inner-container transition-all duration-1000 relative  bg-white `}
+          } inner-container transition-all duration-1000 relative  bg-black `}
         >
           <div
             className={`${navOpen && "lg:rounded-b-[100px]"}
@@ -120,13 +120,13 @@ export default function RootGroupLayout({
                 className={`${
                   navOpen
                     ? "w-5 h-1 bg-custom-red lg:bg-custom-deepgray"
-                    : "w-8 h-2 bg-custom-deepgray lg:bg-custom-deepgray lg:delay-500"
+                    : "w-8 h-2 bg-custom-deepgray lg:bg-white lg:delay-500"
                 }  rounded-full transition-all duration-700 `}
               ></div>
               <div
                 className={`${
                   navOpen
-                    ? "w-8 h-2 bg-custom-red lg:bg-custom-deepgray"
+                    ? "w-8 h-2 bg-custom-red lg:bg-white"
                     : "w-5 h-1 bg-custom-deepgray lg:bg-custom-deepgray lg:delay-500"
                 }  rounded-full transition-all duration-700  `}
               ></div>
@@ -148,7 +148,7 @@ export default function RootGroupLayout({
             navOpen
               ? "h-full lg:h-28 rounded-t-none duration-700"
               : "h-0 rounded-t-full  lg:delay-500 duration-1000"
-          } overflow-hidden flex justify-between  transition-all bg-black lg:rounded-t-none lg:bg-black text-white lg:text-white gap-5 left-0 bottom-0 absolute lg:relative `}
+          } overflow-hidden flex justify-between  transition-all bg-white lg:rounded-t-none lg:bg-white text-black lg:text-black gap-5 left-0 bottom-0 absolute lg:relative `}
         >
           <div
             ref={funTextRef}
