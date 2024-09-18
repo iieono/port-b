@@ -148,7 +148,7 @@ export default function RootGroupLayout({
             navOpen
               ? "h-full lg:h-28 rounded-t-none duration-700"
               : "h-0 rounded-t-full  lg:delay-500 duration-1000"
-          } overflow-hidden flex justify-between  transition-all bg-white lg:rounded-t-none lg:bg-white text-black lg:text-black gap-5 left-0 bottom-0 absolute lg:relative `}
+          } overflow-hidden flex justify-between  transition-all bg-white backdrop-blur-3xl lg:rounded-t-none lg:bg-white text-black lg:text-black gap-5 left-0 bottom-0 absolute lg:relative `}
         >
           <div
             ref={funTextRef}

@@ -110,7 +110,7 @@ export default function Home() {
       });
       arrowtl.to(".mob-arrow-dot", {
         scale: "1",
-        backgroundColor: "white",
+        backgroundColor: "#45474B",
         duration: 0.3,
         stagger: 0.1,
         ease: "power1.out",
@@ -397,8 +397,9 @@ export default function Home() {
       <div className="flex mob-explore-container  self-end lg:hidden w-full italic  items-end uppercase justify-center ">
         <Link
           href="/gallery"
-          className=" w-full bg-custom-deepgray text-white shadow-primary/20 backdrop-blur-sm shadow-2xl text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-2xl justify-between lg:rounded-none lg:rounded-tl-[50px]"
+          className=" w-full bg-white/10 text-custom-deepgray backdrop-blur-sm shadow-2xl text-3xl  lg:text-8xl bottom-1 lg:bottom-0 left-1 right-1 lg:left-auto lg:right-0 px-6 py-2 gap-6 lg:gap-8 flex items-center rounded-2xl justify-between lg:rounded-none lg:rounded-tl-[50px]"
         >
+          <div className="w-full h-full absolute bg-white/60  top-10 left-0 blur-3xl"></div>
           <div className=" hidden lg:flex w-8 h-1/3 absolute left-0 -translate-x-full bg-primary bottom-0">
             <div className="w-full h-full bg-custom-red rounded-br-[30px]"></div>
           </div>
@@ -413,17 +414,17 @@ export default function Home() {
           </p>
           <div className="flex h-full  gap-1 lg:gap-2 items-center ">
             <div className="flex lg:flex-col  items-center gap-1 lg:gap-2 ">
-              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-white rounded-full"></div>
-              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-white rounded-full"></div>
-              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-white rounded-full"></div>
+              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
             </div>
             <div className="flex flex-col items-center gap-1 lg:gap-2">
-              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-white rounded-full"></div>
-              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-white rounded-full"></div>
-              <div className="mob-arrow-dot lg:hidden h-1 lg:h-3 w-1 lg:w-3 bg-white rounded-full"></div>
+              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
+              <div className="mob-arrow-dot lg:hidden h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
             </div>
             <div className="flex items-center flex-col ">
-              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-white rounded-full"></div>
+              <div className="mob-arrow-dot h-1 lg:h-3 w-1 lg:w-3 bg-custom-deepgray rounded-full"></div>
             </div>
           </div>
         </Link>
