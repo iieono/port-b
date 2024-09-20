@@ -9,13 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: "#ffffe3",
+        // primary: "#ffffe3",
+        primary: "#e4e4e4",
+        bg: "#141515",
         "custom-whiteish": "#F5F7F8",
         "custom-yellow": "#F4CE14",
         // "custom-red": "#FF1E00",
         "custom-red": "#da392a",
         "custom-gray": "#FF9B9B",
-        "custom-deepgray": "#45474B",
+        "custom-deepgray": "#9f9f9f",
       },
     },
   },

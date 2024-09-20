@@ -32,7 +32,7 @@
 }
 .nav-item.active{
   opacity: 1;
-  color: #da392a;
+  color: white;
 }
 
 /* .main-container:has(.nav-item:hover) .nav-open-1{
@@ -110,3 +110,6 @@ main{
   min-height: 100vh;
   min-height: -webkit-fill-available;
 }
+/* .hero-title span{
+  @apply rounded-2xl hover:shadow-2xl
+} */
