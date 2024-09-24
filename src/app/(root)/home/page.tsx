@@ -95,7 +95,7 @@ export default function Home() {
             <div>n</div>
             <div>e</div>
             <div>r</div>
-            <div className="mob-links absolute lg:hidden text-[2rem] lowercase flex flex-col  w-max text-accent -right-12 bottom-4">
+            <div className="mob-links absolute lg:hidden text-[1.8rem] lowercase flex flex-col  w-max text-accent -right-12 bottom-4">
               <div>github</div>
               <div>email</div>
             </div>
