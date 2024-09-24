@@ -5,38 +5,16 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import JapaneseInkMouseTrail from "@/components/JapaneseInkMouseTrail";
+import WaveBackground from "@/components/WaveBackground";
 
 export default function RootGroupLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  useGSAP(() => {
-    const layouttl = gsap.timeline();
-    if (window.innerWidth > 1024) {
-      layouttl.from(hamRef.current, {
-        duration: 2,
-        y: 100,
-        x: -100,
-        filter: "blur(10px)",
-        ease: "power2.out",
-      });
-    } else {
-      layouttl.from(hamRef.current, {
-        duration: 3,
-        // y: 40,
-        opacity: 0,
-        filter: "blur(10px)",
-        ease: "power2.out",
-      });
-    }
-  });
-
   const pathname = usePathname();
-  const mainContainerRef = useRef(null);
-  const hamRef = useRef(null);
-  const innerNavRef = useRef(null);
-  const funTextRef = useRef(null);
+
   const [navOpen, setNavOpen] = useState(false);
   const [funText, setFunText] = useState<string>("");
   // fun texts
@@ -55,154 +33,57 @@ export default function RootGroupLayout({
     setNavOpen(false);
     // }
   }, [pathname]);
-  useLayoutEffect(() => {
-    gsap.fromTo(
-      ".menu-pathname",
+  useGSAP(() => {
+    const menutl = gsap.timeline();
+    menutl.from(".menu-container > div", {
+      y: 20,
+      duration: 0.6, // longer duration for smoother transition
+      delay: 0.7,
+      stagger: 0.1,
+      ease: "elastic.out(1, 0.5)",
+    });
+    menutl.from(".menu-container > div.small", {
+      width: "1rem",
+      height: "1rem",
+      duration: 0.6, // longer duration for smoother transition
+
+      stagger: 0.3,
+      ease: "elastic.out(1, 0.5)",
+    });
+
+    menutl.from(
+      ".menu-container > div.large",
       {
-        y: 40,
-        x: -40,
+        width: "1rem",
+        height: "1rem",
+        duration: 0.6, // increase duration for more noticeable elastic effect
+        ease: "elastic.out(1, 0.5)", // elastic ease for a springy effect
       },
-      {
-        y: 0,
-        x: 0,
-        duration: 1,
-        ease: "power2.out",
-      }
+      "-=0.5" // overlap slightly before the first animation ends
     );
-    gsap.fromTo(
-      funTextRef.current,
-      {
-        rotate: "5deg",
-        y: 20,
-      },
-      {
-        ease: "power2.out",
-        duration: 0.7,
-        y: 0,
-        rotate: "0deg",
-      }
-    );
-  }, [pathname]);
+  });
+
   return (
     <main
-      className=" antialiased bg-black grainy-bg overflow-hidden"
+      className=" antialiased bg-primary h-screen"
       style={{ perspective: "1000px" }}
     >
-      <div
-        ref={mainContainerRef}
-        className={`h-screen main-container flex flex-col bg-black rounded-none ${
-          navOpen && " delay-0"
-        }   transition-all duration-700 delay-700  `}
-      >
-        <div
-          className={`${
-            navOpen
-              ? "h-full lg:h-[calc(100%-7rem)] lg:rounded-b-[100px]"
-              : "h-full delay-700 lg:delay-500 duration-1000"
-          } inner-container transition-all duration-1000 relative  bg-primary `}
-        >
-          <div
-            className={`${navOpen && "lg:rounded-b-[100px]"}
-            child-container w-full  h-full grainy-bg  transition-all duration-700 delay-300 overflow-hidden `}
-          >
-            {children}
-          </div>
-          <div
-            ref={hamRef}
-            className="hamburger-container absolute overflow-hidden flex items-center  justify-center lg:justify-start w-20 lg:w-44 z-20 rounded-br-none rounded-bl-none rounded-tl-none h-14 lg:h-auto  top-3 lg:bottom-9 lg:top-auto cursor-pointer right-0 lg:left-20 lg:pl-1 "
-            onClick={() => setNavOpen((prev) => !prev)}
-          >
-            <div
-              ref={innerNavRef}
-              className="nav-open-1 transition-all duration-700 delay-500 absolute   flex items-center flex-col gap-1 justify-center z-20 "
-            >
-              <div
-                className={`${
-                  navOpen
-                    ? "w-5 h-1 bg-custom-red lg:bg-custom-deepgray"
-                    : "w-8 h-2 bg-black lg:bg-custom-deepgray lg:delay-500"
-                }  rounded-full transition-all duration-700 `}
-              ></div>
-              <div
-                className={`${
-                  navOpen
-                    ? "w-8 h-2 bg-custom-red lg:bg-black"
-                    : "w-5 h-1 bg-black lg:bg-custom-deepgray lg:delay-500"
-                }  rounded-full transition-all duration-700  `}
-              ></div>
-            </div>
-            <div className="nav-open-2 transition-all duration-700 delay-300 flex items-center flex-col absolute -translate-x-16  translate-y-16  rotate-45  z-40  rounded-full justify-center">
-              <div className="w-5 h-1.5 bg-primary rounded-full rotate-[45deg] translate-x-3 "></div>
-              <div className="w-8 h-1.5 bg-primary rounded-full"></div>
-              <div className="w-5 h-1.5 bg-primary rounded-full -rotate-[45deg] translate-x-3"></div>
-            </div>
-            <div className="hidden lg:flex pl-12 h-min text-custom-deepgray chillax-text font-semibold uppercase text-2xl overflow-hidden">
-              <span className="menu-pathname inline-block">
-                {pathname.slice(1)}
-              </span>
-            </div>
-          </div>
+      {/* <WaveBackground /> */}
+      <div className="w-full absolute top-0 left-0 backdrop-blur-sm flex items-center justify-between  py-3 px-5">
+        <div className="pen-text text-secondary text-3xl font-extrabold">
+          '//e0
         </div>
-        <div
-          className={`w-full ${
-            navOpen
-              ? "h-full lg:h-28 rounded-t-none duration-700"
-              : "h-0 rounded-t-full  lg:delay-500 duration-1000"
-          } overflow-hidden flex justify-between  transition-all bg-black backdrop-blur-3xl lg:rounded-t-none lg:bg-black text-white lg:text-custom-deepgray gap-5 left-0 bottom-0 absolute lg:relative `}
-        >
-          <div
-            ref={funTextRef}
-            className="absolute select-none opacity-60 bottom-1 left-0 right-0 w-full h-full flex items-end justify-center text-xs pointer-events-none kalam-text"
-          >
-            {funText}
-          </div>
-          <div className="h-full w-full flex flex-col lg:flex-row  items-center justify-center gap-10 lg:gap-0 lg:justify-between px-20 text-5xl lg:text-5xl uppercase array-text pb-0 font-light">
-            <Link href="/home" passHref>
-              <div
-                data-attr="Figuratively."
-                className={`nav-item px-4 py-2 rounded-full ${
-                  pathname === "/home" ? "active" : ""
-                }`}
-              >
-                Home
-              </div>
-            </Link>
-
-            <Link href="/about" passHref>
-              <div
-                data-attr="The page where I make myself sound way cooler than I actually am."
-                className={`nav-item transition-all duration-300 ${
-                  pathname === "/about" ? "active" : ""
-                }`}
-              >
-                About
-              </div>
-            </Link>
-
-            <Link href="/gallery" passHref>
-              <div
-                data-attr="My digital show-off gallery."
-                className={`nav-item transition-all duration-300 ${
-                  pathname === "/gallery" ? "active" : ""
-                }`}
-              >
-                Gallery
-              </div>
-            </Link>
-
-            <Link href="/projects" passHref>
-              <div
-                data-attr="My world domination (or to-do app) attempts."
-                className={`nav-item transition-all duration-300 ${
-                  pathname === "/projects" ? "active" : ""
-                }`}
-              >
-                Projects
-              </div>
-            </Link>
-          </div>
+        <div className="menu-container flex items-center gap-1 cursor-pointer">
+          <div className="h-6 w-2 large bg-bg rounded-full"></div>
+          <div className="h-3 w-2 small bg-bg rounded-full"></div>
+          <div className="h-6 w-2 large bg-bg rounded-full"></div>
+        </div>
+        <div className="chillax-text contact-container hidden lg:flex text-secondary text-2xl font-extalight">
+          <div>email</div>
         </div>
       </div>
+      <div className="w-full h-full">{children}</div>
+      {/* <JapaneseInkMouseTrail /> */}
     </main>
   );
 }

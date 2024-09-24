@@ -1,120 +1,128 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { usePathname, useRouter } from "next/navigation";
+import { useTransitionRouter } from "next-view-transitions";
 
-export default function Home() {
+export default function Component() {
   const pathname = usePathname();
-  const [percent, setPercent] = useState<number>(0);
-  const router = useRouter();
-  const digitRefs = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    const minIncrement = 15;
-    const maxIncrement = 20;
-    const maxPercent = 100;
-    let currentValue = 0;
-
-    const increment = () => {
-      const randomIncrement =
-        Math.floor(Math.random() * (maxIncrement - minIncrement + 1)) +
-        minIncrement;
-      if (currentValue + randomIncrement > maxPercent) {
-        setPercent(maxPercent);
-        return;
-      }
-      currentValue += randomIncrement;
-      setPercent(currentValue);
-      gsap.to(
-        {},
-        {
-          duration: 0.7,
-          onComplete: increment,
-        }
-      );
-    };
-
-    increment();
-
-    return () => {
-      gsap.killTweensOf({});
-    };
-  }, []);
-
-  useEffect(() => {
-    if (percent === 100) {
-      gsap.to(".welcome-container", {
-        visibility: "hidden",
-        duration: 0,
-        delay: 1,
-        onComplete: () => {
-          router.push("/home");
-        },
-      });
-
-      if (pathname === "/home") {
-        if (window.innerWidth > 1024) {
-          gsap.from(".hamburger-container", {
-            duration: 2,
-            y: 100,
-            x: -100,
-            filter: "blur(10px)",
-            ease: "power2.out",
-          });
-        } else {
-          gsap.from(".hamburger-container", {
-            duration: 3,
-            opacity: 0,
-            filter: "blur(10px)",
-            ease: "power2.out",
-          });
-        }
-      }
-    }
-  }, [percent, router, pathname]);
+  const router = useTransitionRouter();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const overlayRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const welcomeRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    digitRefs.current.forEach((ref, index) => {
-      if (ref) {
-        const digit = percent.toString().padStart(3, "0")[index];
-        gsap.to(ref, {
-          y: `-${parseInt(digit) * 10}%`,
-          duration: 0.5,
-          ease: "power2.out",
-        });
-      }
+    const tl = gsap.timeline();
+
+    // Overlay animation (bottom to top)
+    tl.to(overlayRef.current, {
+      y: "-100%",
+      duration: 2.5,
+      ease: "power3.inOut",
     });
-  }, [percent]);
+
+    // Text container animation
+    tl.to(
+      textRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+      },
+      "-=2"
+    );
+
+    // Color transition
+    tl.to(
+      containerRef.current,
+      {
+        backgroundColor: "#212121",
+        duration: 1,
+        ease: "power3.inOut",
+      },
+      "-=1"
+    );
+
+    // Welcome text typing animation
+    const welcomeText = "WELCOME";
+    welcomeRef.current!.innerHTML = welcomeText
+      .split("")
+      .map((char) => `<span class="welcome-char">${char}</span>`)
+      .join("");
+
+    gsap.from(".welcome-char", {
+      opacity: 0,
+      y: 20,
+      rotateX: -90,
+      stagger: 0.1,
+      duration: 0.8,
+      ease: "back.out(1.7)",
+      delay: 1.5,
+    });
+
+    // Text color change
+    tl.to(
+      ".welcome-char",
+      {
+        color: "#f6f6f6",
+        duration: 0.5,
+        ease: "power3.inOut",
+        stagger: 0.05,
+        // onComplete: () => {
+        //   setTimeout(() => {
+        //     router.push("/home");
+        //   }, 1000);
+        // },
+      },
+      "-=0.5"
+    );
+    tl.to(overlayRef.current, {
+      y: "100%",
+      duration: 0,
+      ease: "power3.inOut",
+    });
+    tl.to(overlayRef.current, {
+      y: "0%",
+      duration: 1.25,
+      ease: "power3.in",
+      onComplete: () => {
+        router.push("/home");
+      },
+    });
+  }, []);
 
   return (
-    <div className="h-full w-full flex items-center justify-center">
-      <div className="percent-container fixed bg-primary w-full h-full z-50 flex items-end justify-end text-custom-deepgray font-bold sharpie-text text-4xl lg:text-[10rem] active">
-        <div className="w-full h-full flex items-center lg:items-end p-5 lg:p-20 justify-center lg:justify-end grainy-bg ">
-          {[0, 1, 2].map((index) => (
-            <div
-              key={index}
-              className="relative w-[0.6em] h-[1em] overflow-hidden mx-[2px]"
-            >
-              <div
-                ref={(el) => {
-                  digitRefs.current[index] = el;
-                }}
-                className="absolute top-0 left-0 flex flex-col"
-              >
-                {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
-                  <span
-                    key={num}
-                    className="flex justify-center items-center h-[1em] w-[0.6em]"
-                  >
-                    {num}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
+    <div
+      ref={containerRef}
+      className="h-screen w-full flex items-center justify-center relative bg-bg overflow-hidden"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <div
+        ref={overlayRef}
+        className="absolute z-50 inset-0 bg-red-600"
+        style={{ transform: "translateY(100%)" }}
+        aria-hidden="true"
+      ></div>
+      <div
+        ref={textRef}
+        className="text-5xl lg:text-8xl font-bold flex flex-col gap-8 items-center text-red-600 opacity-0 transform translate-y-10"
+        style={{ zIndex: 10 }}
+      >
+        {/* <div className="welcome-dot-container flex items-center gap-1 cursor-pointer">
+          <div className="h-4 w-4 large bg-bg rounded-full"></div>
+          <div className="h-4 w-4 small bg-bg rounded-full"></div>
+          <div className="h-4 w-4 large bg-bg rounded-full"></div>
+        </div> */}
+        <div
+          ref={welcomeRef}
+          className="flex chillax-text"
+          aria-label="Welcome"
+        ></div>
       </div>
     </div>
   );

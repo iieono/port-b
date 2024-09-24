@@ -10,10 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         // primary: "#ffffe3",
-        primary: "#e4e4e4",
-        bg: "#141515",
-        "custom-whiteish": "#F5F7F8",
-        "custom-yellow": "#F4CE14",
+        primary: "#212121",
+        secondary: "#D9CAB3",
+        bg: "#F6F6F6",
+        accent: "#6D9886",
         // "custom-red": "#FF1E00",
         "custom-red": "#da392a",
         "custom-gray": "#FF9B9B",

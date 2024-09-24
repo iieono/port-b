@@ -19,6 +19,7 @@ import {
   chillax,
   kola,
 } from "../../fonts";
+import { ViewTransitions } from "next-view-transitions";
 
 export const metadata: Metadata = {
   title: "//e0",
@@ -31,9 +32,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`
+    <ViewTransitions>
+      <html
+        lang="en"
+        className={`
       ${styro.variable} 
       ${sharpie.variable} 
       ${pencerio.variable} 
@@ -48,9 +50,10 @@ export default function RootLayout({
       ${alpino.variable}
       ${switzer.variable}
       ${satoshi.variable}
-    `}
-    >
-      <body>{children}</body>
-    </html>
+      `}
+      >
+        <body>{children}</body>
+      </html>
+    </ViewTransitions>
   );
 }
