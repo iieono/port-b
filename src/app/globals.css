@@ -67,7 +67,7 @@ main{
   transition: opacity 0.3s ease-in-out 0.8s, color 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 .navbar:has(.nav-item:hover) .nav-item:not(:hover){
-  filter: blur(2px);
+  @apply lg:blur-[2px]
 }
 .nav-item:hover{
   color: #f6f6f6;

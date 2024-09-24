@@ -158,7 +158,7 @@ export default function RootGroupLayout({
             <div className="h-6 w-2 large bg-bg rounded-full"></div>
             <div className={`h-3 w-2 small bg-bg rounded-full relative`}>
               <div
-                className={` absolute navbar shadow-2xl shadow-bg/10 backdrop-blur-sm flex flex-col lg:flex-row gap-3 justify-evenly z-40 items-center overflow-hidden text-accent text-xl chillax-text uppercase rounded-2xl left-1/2 -translate-x-1/2 ${
+                className={` absolute navbar shadow-2xl shadow-bg/10 backdrop-blur-sm flex flex-col lg:flex-row gap-3 justify-evenly z-40 items-center overflow-hidden text-accent text-2xl lg:text-xl chillax-text uppercase rounded-2xl left-1/2 -translate-x-1/2 ${
                   navOpen
                     ? "h-60 lg:h-14 w-[90vw] lg:w-[34vw] top-10 active bg-bg/10"
                     : " top-0 h-3 w-2 bg-bg"
