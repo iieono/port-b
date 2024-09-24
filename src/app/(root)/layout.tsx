@@ -5,8 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import JapaneseInkMouseTrail from "@/components/JapaneseInkMouseTrail";
-import WaveBackground from "@/components/WaveBackground";
+// import WaveBackground from "@/components/WaveBackground";
 
 export default function RootGroupLayout({
   children,
