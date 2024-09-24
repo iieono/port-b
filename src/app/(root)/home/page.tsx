@@ -12,8 +12,62 @@ export default function Home() {
     tl.to(overlayRef.current, {
       y: "-100%",
       duration: 1.25,
-      ease: "power3.out",
+      delay: 0.3,
+      ease: "power4.out",
     });
+
+    tl.from(
+      ".hero-title",
+      {
+        clipPath: "inset(100% 0 0 0)",
+        y: 100,
+        opacity: 0,
+        rotationX: -45,
+        stagger: 0.2,
+        duration: 1.5,
+        ease: "power3.out",
+      },
+      "-=0.5"
+    );
+    tl.from(
+      ".ideas-text",
+      {
+        clipPath: "inset(100% 0 0 0)",
+        y: 50,
+        opacity: 0,
+        rotationX: -45,
+        stagger: 0.2,
+        duration: 1.5,
+        ease: "power3.out",
+      },
+      "-=1"
+    );
+    tl.from(
+      ".mob-links > div",
+      {
+        clipPath: "inset(100% 0 0 0)",
+        y: 20,
+        opacity: 0,
+        rotationX: -45,
+        stagger: 0.2,
+        duration: 1.5,
+        ease: "power3.out",
+      },
+      "-=1"
+    );
+    tl.from(
+      ".mob-explore",
+      {
+        clipPath: "inset(100% 0 0 0)",
+        y: 100,
+        opacity: 0,
+        rotationX: -45,
+        stagger: 0.2,
+        duration: 1.5,
+        ease: "power3.out",
+      },
+      "-=1"
+    );
   });
   const overlayRef = useRef<HTMLDivElement>(null);
   return (
@@ -28,20 +82,40 @@ export default function Home() {
         {/* <div className="text-bg text-4xl chillax-text">
           Hi! I am Abdusamadbek Akhmadjonov
         </div> */}
-        <div className="text-[2.9rem] lg:text-[8.7rem] leading-none -mt-3 chillax-text font-light text-accent">
+        <div className="ideas-text text-[2.9rem] lg:text-[8.7rem] leading-none -mt-3 chillax-text font-light text-accent">
           I craft ideas
         </div>
         <div className="font-semibold uppercase flex flex-col text-9xl lg:text-[24rem] leading-none overflow-hidden text-custom-red styro-text">
-          <div className="lg:-mt-10 relative w-min">
-            Designer
-            {/* <div className="absolute text-[10rem] lowercase flex flex-col  w-max text-accent -right-36 bottom-9">
-              and
-            </div> */}
+          <div className="hero-title lg:-mt-10 relative w-min flex">
+            <div>D</div>
+            <div>e</div>
+            <div>s</div>
+            <div>i</div>
+            <div>g</div>
+            <div>n</div>
+            <div>e</div>
+            <div>r</div>
+            <div className="mob-links absolute lg:hidden text-[2rem] lowercase flex flex-col  w-max text-accent -right-12 bottom-4">
+              <div>github</div>
+              <div>email</div>
+            </div>
           </div>
-          <div className=" -mt-7 lg:-mt-20 lg:-mb-10 overflow-hidden">
-            Developer
+          <div className="hero-title -mt-7 lg:-mt-20 lg:-mb-10 overflow-hidden flex">
+            <div>D</div>
+            <div>e</div>
+            <div>v</div>
+            <div>e</div>
+            <div>l</div>
+            <div>o</div>
+            <div>p</div>
+            <div>e</div>
+            <div>r</div>
           </div>
         </div>
+        <div className="lg:hidden mob-explore text-[4.2rem] leading-none chillax-text uppercase font-extrabold text-secondary pb-3 -ml-1 flex items-center justify-start">
+          Explore
+        </div>
+        {/* <div className="bg-custom-red/80 w-full h-5/6 origin-top-right  absolute right-0 bottom-0 -rotate-45"></div> */}
       </div>
     </div>
   );
