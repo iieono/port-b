@@ -40,7 +40,7 @@ export default function Component() {
     tl.to(
       containerRef.current,
       {
-        backgroundColor: "#212121",
+        backgroundColor: "#13181b",
         duration: 1,
         ease: "power3.inOut",
       },
@@ -68,7 +68,7 @@ export default function Component() {
     tl.to(
       ".welcome-char",
       {
-        color: "#f6f6f6",
+        color: "#f9f8ef",
         duration: 0.5,
         ease: "power3.inOut",
         stagger: 0.05,
@@ -98,19 +98,19 @@ export default function Component() {
   return (
     <div
       ref={containerRef}
-      className="h-screen w-full flex items-center justify-center relative bg-bg overflow-hidden"
+      className="h-screen w-full flex items-center justify-center relative bg-primary overflow-hidden"
       aria-live="polite"
       aria-atomic="true"
     >
       <div
         ref={overlayRef}
-        className="absolute z-50 inset-0 bg-red-600"
+        className="absolute z-50 inset-0 bg-oriolas"
         style={{ transform: "translateY(100%)" }}
         aria-hidden="true"
       ></div>
       <div
         ref={textRef}
-        className="text-5xl lg:text-8xl font-bold flex flex-col gap-8 items-center text-red-600 opacity-0 transform translate-y-10"
+        className="text-5xl lg:text-8xl font-bold flex flex-col gap-8 items-center text-oriolas opacity-0 transform translate-y-10"
         style={{ zIndex: 10 }}
       >
         {/* <div className="welcome-dot-container flex items-center gap-1 cursor-pointer">

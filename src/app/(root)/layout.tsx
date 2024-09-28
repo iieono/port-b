@@ -47,7 +47,7 @@ export default function RootGroupLayout({
       });
       menutl.from(".menu-container > div.small", {
         width: "1rem",
-        height: "1rem",
+        height: "1.5rem",
         duration: 0.6,
         stagger: 0.3,
         ease: "elastic.out(1, 0.5)",
@@ -58,7 +58,7 @@ export default function RootGroupLayout({
         {
           width: "1rem",
           height: "1rem",
-          duration: 0.6,
+          duration: 0.9,
           ease: "elastic.out(1, 0.5)",
         },
         "-=0.5"
@@ -135,7 +135,7 @@ export default function RootGroupLayout({
 
   return (
     <main
-      className="antialiased bg-primary h-screen"
+      className="antialiased bg-bg h-screen"
       style={{ perspective: "1000px" }}
     >
       {/* <WaveBackground /> */}
@@ -151,31 +151,46 @@ export default function RootGroupLayout({
             onClick={() => {
               setNavOpen((prev) => !prev);
             }}
-            className={`menu-container  transition-all h-16 ys duration-700 grid grid-flow-col group items-center gap-1 cursor-pointer ${
+            className={`menu-container  transition-all h-16 duration-700 grid grid-flow-col group items-center gap-1 cursor-pointer ${
               navOpen && ""
             }`}
           >
-            <div className="h-6 w-2 large bg-bg rounded-full"></div>
-            <div className={`h-3 w-2 small bg-bg rounded-full relative`}>
+            <div className="h-6 w-2 large bg-primary rounded-full"></div>
+            <div className={`h-3 w-2 small bg-primary rounded-full relative`}>
               <div
-                className={` absolute navbar shadow-2xl shadow-bg/10 backdrop-blur-sm flex flex-col lg:flex-row gap-3 justify-evenly z-40 items-center overflow-hidden text-accent text-2xl lg:text-xl chillax-text uppercase rounded-2xl left-1/2 -translate-x-1/2 ${
+                className={` absolute navbar shadow-2xl shadow-bg/10 backdrop-blur-3xl flex flex-col lg:flex-row gap-3 z-[99999999] justify-between  overflow-hidden text-accent text-2xl lg:text-xl chillax-text uppercase rounded-2xl left-1/2 -translate-x-1/2 ${
                   navOpen
-                    ? "h-60 lg:h-14 w-[90vw] lg:w-[34vw] top-10 active bg-bg/10"
-                    : " top-0 h-3 w-2 bg-bg"
+                    ? "h-[88vh] lg:h-[92vh] w-[90vw] lg:w-[98vw] top-10 active bg-oriolas"
+                    : " top-0 h-3 w-2 bg-primary"
                 }`}
               >
-                <div className="nav-item">Home</div>
-                <div className="nav-item">About</div>
-                <div className="nav-item">Gallery</div>
-                <div className="nav-item">Projects</div>
+                <div className="font-bold text-5xl p-3 lg:text-8xl">
+                  <div className="nav-item">Home</div>
+                  <div className="nav-item">About</div>
+                  <div className="nav-item">Gallery</div>
+                  <div className="nav-item">Projects</div>
+                </div>
+                <div className="lowercase w-full text-5xl items-end flex justify-end self-end">
+                  <div className="flex items-end lg:hidden bg-secondary text-bg rounded-tl-3xl px-5 border-t-4 border-l-4 border-bg font-bold text-2xl uppercas gap-3">
+                    <div>connect</div>
+                  </div>
+                  {/* <div className="font-semibold uppercase boxing-text">
+                    iieo
+                  </div> */}
+                </div>
               </div>
             </div>
-            <div className="h-6 w-2 large bg-bg rounded-full"></div>
+            <div className="h-6 w-2 large bg-primary rounded-full"></div>
           </div>
 
-          <div className="connect-text chillax-text overflow-hidden contact-container hidden lg:flex gap-5 text-secondary text-2xl font-extalight justify-self-end">
-            <div>github</div>
-            <div>email</div>
+          <div className="connect-text chillax-text overflow-hidden contact-container hidden lg:flex items-center gap-1 text-secondary text-xl font-extalight justify-self-end">
+            <div className="w-2 h-2 rounded-2xl bg-oriolas mr-3"></div>
+            <div className="rounded-full border border-accent hover:border-oriolas px-3 py-[2px]">
+              github
+            </div>
+            <div className="rounded-full border border-accent hover:border-oriolas px-3 py-[2px]">
+              email
+            </div>
           </div>
         </div>
       </div>

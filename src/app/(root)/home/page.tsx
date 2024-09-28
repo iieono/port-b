@@ -74,7 +74,7 @@ export default function Home() {
     <div className="w-full h-full page-container">
       <div
         ref={overlayRef}
-        className="absolute inset-0 z-50 bg-red-600"
+        className="absolute inset-0 z-50 bg-oriolas"
         // style={{ transform: "translateY(100%)" }}
         aria-hidden="true"
       ></div>
@@ -82,10 +82,10 @@ export default function Home() {
         {/* <div className="text-bg text-4xl chillax-text">
           Hi! I am Abdusamadbek Akhmadjonov
         </div> */}
-        <div className="ideas-text text-[2.9rem] lg:text-[8.7rem] leading-none -mb-3 chillax-text font-light text-accent">
+        <div className="ideas-text text-[2.9rem] -z-10 lg:text-[8.7rem] leading-none -mb-3 chillax-text font-light text-shift">
           I craft ideas
         </div>
-        <div className="font-semibold uppercase flex flex-col text-9xl lg:text-[24rem] leading-none overflow-hidden text-custom-red styro-text">
+        <div className="font-semibold -z-10 uppercase flex flex-col text-9xl  lg:text-[24rem] leading-none overflow-hidden text-accent styro-text">
           <div className="hero-title lg:-mt-10 relative w-min flex">
             <div>D</div>
             <div>e</div>
@@ -95,7 +95,7 @@ export default function Home() {
             <div>n</div>
             <div>e</div>
             <div>r</div>
-            <div className="mob-links absolute lg:hidden text-[1.8rem] lowercase flex flex-col  w-max text-accent -right-12 bottom-4">
+            <div className="mob-links absolute lg:hidden text-[1.8rem] lowercase flex flex-col  w-max text-oriolas -right-12 bottom-4">
               <div>github</div>
               <div>email</div>
             </div>
@@ -112,7 +112,7 @@ export default function Home() {
             <div>r</div>
           </div>
         </div>
-        <div className="lg:hidden mob-explore -mt-5 text-[4.2rem] leading-none chillax-text uppercase font-extrabold text-secondary pb-3 -ml-1 flex items-center justify-start">
+        <div className="lg:hidden -z-10 mob-explore -mt-5 text-[4.2rem] leading-none chillax-text uppercase font-extrabold text-oriolas pb-3 -ml-1 flex items-center justify-start">
           Explore
         </div>
         {/* <div className="bg-custom-red/80 w-full h-5/6 origin-top-right  absolute right-0 bottom-0 -rotate-45"></div> */}
