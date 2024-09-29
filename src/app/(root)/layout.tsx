@@ -160,22 +160,26 @@ export default function RootGroupLayout({
               <div
                 className={` absolute navbar shadow-2xl shadow-bg/10 backdrop-blur-3xl flex flex-col lg:flex-row gap-3 z-[99999999] justify-between  overflow-hidden text-accent text-2xl lg:text-xl chillax-text uppercase rounded-2xl left-1/2 -translate-x-1/2 ${
                   navOpen
-                    ? "h-[88vh] lg:h-[92vh] w-[90vw] lg:w-[98vw] top-10 active bg-oriolas"
+                    ? "h-[88vh] sm:h-[90vh] lg:h-[92vh] w-[96vw] lg:w-[98vw] top-10 active bg-oriolas"
                     : " top-0 h-3 w-2 bg-primary"
                 }`}
               >
-                <div className="font-bold text-5xl p-3 lg:text-8xl">
+                <div className="font-bold text-6xl p-3 lg:text-8xl">
                   <div className="nav-item">Home</div>
                   <div className="nav-item">About</div>
                   <div className="nav-item">Gallery</div>
                   <div className="nav-item">Projects</div>
                 </div>
+                {/* <div className="absolute lg:hidden lowercase right-4 -bottom-2 py-10  text-bg  text-9xl pen-text  font-bold">
+                  //////e0
+                </div> */}
+
                 <div className="lowercase w-full text-5xl items-end flex justify-end self-end">
                   <div className="flex items-end lg:hidden bg-secondary text-bg rounded-tl-3xl px-5 border-t-4 border-l-4 border-bg font-bold text-2xl uppercas gap-3">
                     <div>connect</div>
                   </div>
-                  {/* <div className="font-semibold uppercase boxing-text">
-                    iieo
+                  {/* <div className="hidden lg:flex capitalize text-bg font-bold text-9xl styro-text px-6 py-2">
+                    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                   </div> */}
                 </div>
               </div>
