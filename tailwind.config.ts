@@ -11,10 +11,10 @@ const config: Config = {
       colors: {
         // primary: "#ffffe3",
         primary: "#f9f8ef",
-        oriolas: "#fb4f14",
+        oriolas: "#e82a4e",
         secondary: "#e9d6bd",
         accent: "#a3c0bd",
-        shift: "#104a65",
+        shift: "#10232d",
         bg: "#13181b",
         // "custom-red": "#FF1E00",
         "custom-red": "#da392a",

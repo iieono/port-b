@@ -160,7 +160,7 @@ export default function RootGroupLayout({
               <div
                 className={` absolute navbar shadow-2xl shadow-bg/10 backdrop-blur-3xl flex flex-col lg:flex-row gap-3 z-[99999999] justify-between  overflow-hidden text-accent text-2xl lg:text-xl chillax-text uppercase rounded-2xl left-1/2 -translate-x-1/2 ${
                   navOpen
-                    ? "h-[90vh] sm:h-[90vh] lg:h-[92vh] w-[96vw] lg:w-[98vw] top-10 active bg-oriolas"
+                    ? "h-[90vh] sm:h-[92vh] lg:h-[92vh] w-[96vw] lg:w-[98vw] top-10 active bg-oriolas"
                     : " top-0 h-3 w-2 bg-primary"
                 }`}
               >
