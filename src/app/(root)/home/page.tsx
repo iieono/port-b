@@ -82,7 +82,7 @@ export default function Home() {
         {/* <div className="text-bg text-4xl chillax-text">
           Hi! I am Abdusamadbek Akhmadjonov
         </div> */}
-        <div className="ideas-text text-[2.9rem] -z-10 lg:text-[8.7rem] leading-none -mb-3 chillax-text font-light text-shift">
+        <div className="ideas-text text-[2.9rem] -z-10 lg:text-[8.7rem] leading-none -mb-3 chillax-text font-light text-accent">
           I craft ideas
         </div>
         <div className="font-semibold -z-10 uppercase flex flex-col text-9xl  lg:text-[24rem] leading-none overflow-hidden text-accent styro-text">

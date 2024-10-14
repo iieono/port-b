@@ -117,21 +117,6 @@ export default function RootGroupLayout({
       ease: "elastic.out(1, 0.5)",
     });
   }, [navOpen]);
-  const handleMouseEnter = () => {
-    gsap.to(".menu-container > div.small", {
-      marginBottom: "0.75rem",
-      duration: 0.3,
-      ease: "power1.out",
-    });
-  };
-
-  const handleMouseLeave = () => {
-    gsap.to(".menu-container > div.small", {
-      marginBottom: "0rem",
-      duration: 0.3,
-      ease: "power1.out",
-    });
-  };
 
   return (
     <main
@@ -164,11 +149,19 @@ export default function RootGroupLayout({
                     : " top-0 h-3 w-2 bg-primary"
                 }`}
               >
-                <div className="font-bold text-6xl p-3 lg:text-8xl">
-                  <div className="nav-item">Home</div>
-                  <div className="nav-item">About</div>
-                  <div className="nav-item">Gallery</div>
-                  <div className="nav-item">Projects</div>
+                <div className="font-bold flex flex-col text-6xl p-3 lg:text-8xl">
+                  <Link href="/home" className="nav-item">
+                    Home
+                  </Link>
+                  <Link href="/about" className="nav-item">
+                    About
+                  </Link>
+                  <Link href="/gallery" className="nav-item">
+                    Gallery
+                  </Link>
+                  <Link href="/projects" className="nav-item">
+                    Projects
+                  </Link>
                 </div>
                 {/* <div className="absolute lg:hidden lowercase right-4 -bottom-2 py-10  text-bg  text-9xl pen-text  font-bold">
                   //////e0
@@ -189,10 +182,10 @@ export default function RootGroupLayout({
 
           <div className="connect-text chillax-text overflow-hidden contact-container hidden lg:flex items-center gap-1 text-secondary text-xl font-extalight justify-self-end">
             <div className="w-2 h-2 rounded-2xl bg-oriolas mr-3"></div>
-            <div className="rounded-full border border-accent hover:border-oriolas px-3 py-[2px]">
+            <div className="rounded-full border border-transparent hover:border-oriolass px-3 py-[2px]">
               github
             </div>
-            <div className="rounded-full border border-accent hover:border-oriolas px-3 py-[2px]">
+            <div className="rounded-full border border-transparent hover:border-oriolass px-3 py-[2px]">
               email
             </div>
           </div>

@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         // primary: "#ffffe3",
         primary: "#f9f8ef",
-        oriolas: "#e82a4e",
+        oriolas: "#ec2938",
         secondary: "#e9d6bd",
         accent: "#a3c0bd",
         shift: "#10232d",
